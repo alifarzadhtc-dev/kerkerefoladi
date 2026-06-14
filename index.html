@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,interactive-widget=resizes-content">
+<title>🚪 کرکره فولادی</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f2744;--blue:#1e3a5f;--sky:#2d6a9f;--gold:#f59e0b;--go:#059669;--danger:#dc2626;--bg:#f0f4f8;--sur:#fff;--line:#dde3ec;--dim:#6b7a96}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:'Vazirmatn',Tahoma,sans-serif;background:var(--bg);color:var(--ink);direction:rtl}
+.hdr{background:linear-gradient(135deg,var(--ink),var(--blue));padding:10px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:0 2px 10px rgba(15,39,68,.18)}
+.hdr h1{font-size:15px;font-weight:900;color:#fff}
+.wrap{max-width:500px;margin:0 auto 90px;padding:12px}
+.card{background:var(--sur);border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:0 4px 18px rgba(15,39,68,.08);border:1px solid var(--line)}
+.bnav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:500px;background:#fff;border-top:1px solid var(--line);display:flex;z-index:300;box-shadow:0 -3px 16px rgba(15,39,68,.08)}
+.nb{flex:1;padding:8px 0;border:none;background:none;cursor:pointer;font-family:inherit}
+.nb .ni{font-size:18px}.nb .nl{font-size:9px;color:var(--dim);margin-top:1px}
+.nb.active .nl{color:var(--blue);font-weight:700}
+.nd{width:16px;height:3px;background:var(--blue);border-radius:2px;margin:2px auto 0;display:none}
+.nb.active .nd{display:block}
+.btn{border:none;border-radius:10px;padding:10px 16px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:5px;transition:all .15s}
+.btn:active{transform:scale(.97)}
+.bp{background:var(--blue);color:#fff}.bg{background:var(--go);color:#fff}
+.br{background:#fee2e2;color:var(--danger)}.bl{background:#f1f5f9;color:#334155}
+.bwa{background:#25D366;color:#fff}.bsm{background:#3b82f6;color:#fff}
+.bpr{background:var(--ink);color:#fff}
+.bfull{width:100%}.bbig{padding:14px;font-size:15px;border-radius:13px}
+.lbl{display:block;font-size:11px;color:var(--dim);font-weight:600;margin-bottom:3px}
+input,select,textarea{width:100%;padding:9px 11px;border:1.5px solid var(--line);border-radius:9px;font-family:inherit;font-size:13px;direction:rtl;outline:none;background:#f9fafb;-webkit-appearance:none}
+input:focus,select:focus,textarea:focus{border-color:var(--sky);background:#fff;box-shadow:0 0 0 3px rgba(45,106,159,.1)}
+input[type=number]{-moz-appearance:textfield}
+input[type=number]::-webkit-inner-spin-button{display:none}
+textarea{height:70px;resize:vertical}
+.f{margin-bottom:10px}
+.r2{display:flex;gap:8px}.r2 .f{flex:1}
+.st{font-weight:800;color:var(--blue);font-size:14px;margin-bottom:12px}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.sc{border-radius:13px;padding:13px;text-align:center}
+.sc .si{font-size:24px}.sc .sv{font-weight:800;font-size:13px;margin-top:4px}.sc .sl{font-size:10px;color:var(--dim);margin-top:1px}
+.ic{background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px;margin-bottom:8px;cursor:pointer;transition:all .15s;box-shadow:0 2px 6px rgba(15,39,68,.04)}
+.ic:hover{box-shadow:0 4px 14px rgba(15,39,68,.1);transform:translateY(-1px)}
+.dtbl{width:100%;border-collapse:collapse;font-size:12px}
+.dtbl thead th{padding:7px 5px;background:#f1f5f9;color:var(--dim);font-weight:700;font-size:10px;border-bottom:2px solid var(--line);text-align:right;white-space:nowrap}
+.dtbl tbody tr{border-bottom:1px solid var(--line)}.dtbl tbody tr:last-child{border-bottom:none}
+.dtbl tbody td{padding:5px 4px;vertical-align:middle}
+.dtbl tbody td input,.dtbl tbody td select{padding:7px 7px;font-size:12px;border-radius:7px}
+.dtbl tfoot td{padding:7px 5px;font-size:11px;font-weight:700;background:#f8fafc;border-top:2px solid var(--line)}
+.rt-grp{display:flex;gap:3px}
+.rt-btn{flex:1;padding:6px 3px;border:1.5px solid var(--line);border-radius:7px;background:#f9fafb;cursor:pointer;font-family:inherit;font-size:10px;font-weight:700;white-space:nowrap;transition:all .15s}
+.rt-btn.on{border-color:var(--blue);background:var(--blue);color:#fff}
+.del-btn{width:26px;height:26px;border:none;border-radius:7px;background:#fee2e2;color:var(--danger);cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;margin:auto}
+.del-btn:disabled{opacity:.3;cursor:not-allowed}
+.add-row{width:100%;margin-top:9px;padding:9px;border:1.5px dashed var(--line);border-radius:10px;background:#f9fafb;cursor:pointer;font-family:inherit;font-size:12px;font-weight:700;color:var(--dim);display:flex;align-items:center;justify-content:center;gap:5px}
+.add-row:hover{border-color:var(--sky);color:var(--sky);background:#f0f9ff}
+.sumbox{background:linear-gradient(135deg,var(--ink),var(--blue));border-radius:15px;padding:16px;color:#fff;margin-bottom:12px}
+.srow{display:flex;justify-content:space-between;padding:3px 0;font-size:12px;opacity:.82}
+.stot{border-top:1px solid rgba(255,255,255,.2);margin-top:9px;padding-top:10px;font-size:18px;font-weight:900;text-align:center;color:var(--gold)}
+.finbox{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:13px;padding:15px;margin-bottom:12px}
+.fr{display:flex;justify-content:space-between;padding:4px 0;font-size:13px}
+.ftot{border-top:1px solid #86efac;margin-top:7px;padding-top:8px;display:flex;justify-content:space-between;font-size:16px;font-weight:800}
+.pi{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line);font-size:12px}
+.badge{padding:3px 8px;border-radius:7px;font-size:10px;font-weight:700}
+.bp2{background:#fef3c7;color:#92400e}.bd{background:#d1fae5;color:#065f46}
+.sb{width:100%;padding:10px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:13px;direction:rtl;outline:none;margin-bottom:12px;background:#f9fafb}
+.empty{text-align:center;color:var(--dim);padding:40px 20px}
+.empty .ei{font-size:40px;margin-bottom:8px}
+.bbtn{display:flex;align-items:center;gap:4px;color:var(--dim);font-size:12px;font-weight:600;background:none;border:none;cursor:pointer;margin-bottom:12px;font-family:inherit}
+.addbox{border:1.5px dashed var(--line);border-radius:11px;padding:13px;background:#f9fafb;margin-top:8px}
+.abt{font-weight:700;color:var(--dim);font-size:11px;margin-bottom:8px}
+.vrow{display:flex;gap:6px;align-items:stretch}
+.vrow input{flex:1;padding:8px 11px;border:1.5px solid var(--line);border-radius:9px;font-family:inherit;font-size:13px;direction:rtl;outline:none;background:#f0f9ff}
+.micbtn{width:42px;min-width:42px;border-radius:9px;border:none;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;position:relative;overflow:hidden}
+.micbtn.rec{background:var(--danger)}
+.rpl{position:absolute;width:100%;height:100%;border-radius:9px;background:rgba(255,255,255,.25);animation:rip .8s infinite}
+@keyframes rip{0%{transform:scale(.8);opacity:1}100%{transform:scale(1.3);opacity:0}}
+.rst{text-align:center;padding:6px;border-radius:8px;font-size:11px;font-weight:600;margin-top:6px}
+.rst.rec{background:#fef2f2;color:var(--danger)}
+.ac-wrap{position:relative}
+.ac-list{position:absolute;top:100%;right:0;left:0;background:#fff;border:1.5px solid var(--sky);border-radius:10px;box-shadow:0 8px 24px rgba(15,39,68,.15);z-index:500;max-height:200px;overflow-y:auto;margin-top:3px}
+.ac-item{padding:10px 13px;cursor:pointer;border-bottom:1px solid var(--line)}
+.ac-item:last-child{border-bottom:none}
+.ac-item:hover,.ac-item.sel{background:#eff6ff}
+.cfg-card{background:var(--sur);border-radius:18px;margin-bottom:12px;box-shadow:0 4px 18px rgba(15,39,68,.08);border:1px solid var(--line);overflow:hidden}
+.cfg-nav{display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;background:#f1f5f9;border-bottom:2px solid var(--line)}
+.ctab{border:none;background:transparent;cursor:pointer;font-family:inherit;font-size:10px;font-weight:700;color:var(--dim);padding:10px 4px;text-align:center;line-height:1.5;border-bottom:3px solid transparent}
+.ctab.on{color:var(--blue);border-bottom:3px solid var(--blue);background:#fff}
+.cfg-body{padding:16px}
+.prod-tbl{width:100%;border-collapse:collapse;font-size:11px;min-width:850px}
+.prod-tbl thead th{padding:7px 4px;background:#0f2744;color:#fff;text-align:center;font-size:9px;font-weight:700;border-left:1px solid rgba(255,255,255,.15);white-space:nowrap}
+.prod-tbl tbody td{padding:7px 4px;text-align:center;border-left:1px solid var(--line);border-bottom:1px solid var(--line)}
+.prod-tbl tbody tr:nth-child(even){background:#f9fafb}
+/* sub row */
+.sub-row{background:#f5f8ff!important}
+.sub-row td{padding:4px 8px 8px!important;font-size:10px}
+.si2{display:inline-block;width:50px;padding:3px 5px;font-size:11px;border-radius:6px;border:1px solid var(--line);direction:rtl;font-family:inherit}
+.sl2{display:inline-block;width:70px;padding:3px 5px;font-size:11px;border-radius:6px;border:1px solid var(--line);direction:rtl;font-family:inherit;background:#f9fafb}
+.fin{animation:fi .2s ease}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <h1>🚪 کرکره فولادی</h1>
+  <div style="color:rgba(255,255,255,.6);font-size:11px" id="hdrDate"></div>
+</div>
+<div class="wrap" id="app"></div>
+<nav class="bnav">
+  <button class="nb active" data-page="home" onclick="go('home')"><div class="ni">🏠</div><div class="nl">خانه</div><div class="nd"></div></button>
+  <button class="nb" data-page="new"  onclick="go('new')"> <div class="ni">➕</div><div class="nl">فاکتور جدید</div><div class="nd"></div></button>
+  <button class="nb" data-page="list" onclick="go('list')"><div class="ni">📋</div><div class="nl">فاکتورها</div><div class="nd"></div></button>
+  <button class="nb" data-page="prod" onclick="go('prod')"><div class="ni">🏭</div><div class="nl">تولید</div><div class="nd"></div></button>
+  <button class="nb" data-page="cfg"  onclick="go('cfg')"> <div class="ni">⚙️</div><div class="nl">تنظیمات</div><div class="nd"></div></button>
+</nav>
+<script>
+/* ════ DATA ════ */
+const DEF={
+  products:[
+    {id:"p1",name:"تک‌جداره ساده",ppm:850000},
+    {id:"p2",name:"تک‌جداره فول‌پانچ",ppm:950000},
+    {id:"p3",name:"دوجداره ساده",ppm:1150000},
+    {id:"p4",name:"دوجداره عایق‌دار",ppm:1350000},
+    {id:"p5",name:"ضدسرقت",ppm:1550000},
+  ],
+  colors:[
+    {id:"c1",name:"سفید"},{id:"c2",name:"کرم"},{id:"c3",name:"خاکستری"},
+    {id:"c4",name:"مشکی"},{id:"c5",name:"قهوه‌ای"},{id:"c6",name:"آجری"},
+  ],
+  accTypes:[
+    {id:"a1",name:"ریل",unit:"متر",ppu:120000},
+    {id:"a2",name:"تبدیل",unit:"عدد",ppu:85000},
+    {id:"a3",name:"شفت",unit:"متر",ppu:95000},
+  ],
+  fixedNotes:["کالا پس از تحویل مرجوع نمی‌شود.","نصب به عهده خریدار می‌باشد.","ضمانت: ۱۲ ماه در برابر عیوب ساخت."],
+  myPhone:"",
+  myPhone:""  // شماره واتساپ شما برای دریافت تأییدیه
+};
+let P=ld("kk9_p")||DEF;
+if(!P.fixedNotes)P.fixedNotes=[];
+if(P.myPhone===undefined)P.myPhone="";
+let INV=ld("kk9_i")||[];
+let PROD=ld("kk9_prod")||[];
+let _pg=localStorage.getItem("kk9_page")||"home";
+if(_pg==="new")_pg="home";
+let PAGE=_pg,SEL=localStorage.getItem("kk9_sel")||null;
+let CTAB2="products",Q="";
+let DOORS=[],ACCS=[];
+
+function ld(k){try{return JSON.parse(localStorage.getItem(k))}catch{return null}}
+function sv(){
+  localStorage.setItem("kk9_p",JSON.stringify(P));
+  localStorage.setItem("kk9_i",JSON.stringify(INV));
+  localStorage.setItem("kk9_prod",JSON.stringify(PROD));
+}
+function nextN(){return(Math.max(0,...INV.map(i=>parseInt(i.num)||0))+1).toString().padStart(4,"0")}
+function nowFa(){return new Date().toLocaleDateString("fa-IR")}
+function fp(n){return(n||0).toLocaleString("fa-IR")+" تومان"}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,5)}
+function elv(id){const e=document.getElementById(id);return e?e.value:null}
+function nd(){return{id:uid(),pid:"",cid:"",rt:"",w:"",h:"",rc:"",pc:"",nt:"",scol:"",rcol:"",et:"galv",ecol:"",oc:"تولید"}}
+function na(){return{id:uid(),aid:"",qty:""}}
+
+function calcTotals(doors,accs){
+  const dt=doors.reduce((s,d)=>{const pr=P.products.find(p=>p.id===d.pid);const a=(parseFloat(d.w)||0)*(parseFloat(d.h)||0);return s+a*(pr?.ppm||0);},0);
+  const at=accs.reduce((s,a)=>{const tp=P.accTypes.find(t=>t.id===a.aid);return s+(parseFloat(a.qty)||0)*(tp?.ppu||0);},0);
+  return{dt,at,tot:dt+at};
+}
+function pkgCalc(tiles,w){
+  const pp=parseFloat(w)>=4?11:13;
+  const full=Math.floor(tiles/pp),rem=tiles%pp;
+  let parts=Array(full).fill(String(pp));
+  if(rem>0)parts.push("("+rem+"+1)");
+  else if(parts.length>0)parts[parts.length-1]="("+pp+"+1)";
+  return{str:parts.join("+"),count:full+(rem>0?1:0)};
+}
+
+/* ════ NAVIGATE ════ */
+function go(page,id){
+  PAGE=page;SEL=id||null;
+  localStorage.setItem("kk9_page",page);
+  if(page==="detail"&&id) localStorage.setItem("kk9_sel",id);
+  else localStorage.removeItem("kk9_sel");
+  document.querySelectorAll(".nb").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+  if(page==="new"){DOORS=[nd()];ACCS=[na()];}
+  render();
+}
+
+function render(){
+  const app=document.getElementById("app");
+  const d=document.createElement("div");
+  d.className="fin";
+  document.querySelectorAll(".nb").forEach(b=>b.classList.toggle("active",b.dataset.page===PAGE));
+  if(PAGE==="home")       d.innerHTML=pgHome();
+  else if(PAGE==="edit")  d.innerHTML=pgEditPage();
+  else if(PAGE==="new")   d.innerHTML=pgNew();
+  else if(PAGE==="list")  d.innerHTML=pgList();
+  else if(PAGE==="detail")d.innerHTML=pgDetail();
+  else if(PAGE==="prod")  d.innerHTML=pgProd();
+  else if(PAGE==="cfg")   d.innerHTML=pgCfg();
+  app.innerHTML="";app.appendChild(d);
+  afterRender();
+}
+
+/* ════ HOME ════ */
+function pgHome(){
+  const tR=INV.reduce((s,i)=>s+(i.c?.tot||0),0);
+  const tP=INV.reduce((s,i)=>s+(i.pays?.reduce((ss,p)=>ss+p.amt,0)||0),0);
+  const cu=[...new Set(INV.map(i=>i.cust?.ph).filter(Boolean))].length;
+  return`<div class="sgrid">
+    <div class="sc" style="background:#eff6ff;border:1px solid #bfdbfe"><div class="si">📄</div><div class="sv" style="color:var(--blue)">${INV.length}</div><div class="sl">فاکتور</div></div>
+    <div class="sc" style="background:#f0fdf4;border:1px solid #bbf7d0"><div class="si">👥</div><div class="sv" style="color:var(--go)">${cu}</div><div class="sl">مشتری</div></div>
+    <div class="sc" style="background:#fffbeb;border:1px solid #fde68a"><div class="si">💰</div><div class="sv" style="color:#b45309;font-size:11px">${fp(tR)}</div><div class="sl">کل فروش</div></div>
+    <div class="sc" style="background:#fef2f2;border:1px solid #fecaca"><div class="si">⚠️</div><div class="sv" style="color:var(--danger);font-size:11px">${fp(tR-tP)}</div><div class="sl">مانده کل</div></div>
+  </div>
+  <button class="btn bp bfull bbig" onclick="go('new')">➕ ثبت فاکتور جدید</button>
+  ${INV.length?`<div style="margin-top:12px"><div class="st" style="margin-bottom:8px">📋 آخرین فاکتورها</div>${[...INV].reverse().slice(0,4).map(iCard).join("")}</div>`:""}`;
+}
+function iCard(inv){
+  const paid=inv.pays?.reduce((s,p)=>s+p.amt,0)||0,rem=inv.c.tot-paid;
+  return`<div class="ic" onclick="go('detail','${inv.id}')">
+    <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+      <span style="font-weight:800;color:var(--blue);font-size:13px">فاکتور #${inv.num}</span>
+      <span style="font-size:10px;color:var(--dim)">📅 ${inv.date}</span>
+    </div>
+    <div style="font-size:12px;margin-bottom:3px">👤 ${inv.cust?.nm} | 📱 ${inv.cust?.ph}</div>
+    <div style="font-size:11px;color:var(--dim);margin-bottom:5px">🚪 ${inv.doors?.length||0} دهنه</div>
+    <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700">
+      <span style="color:var(--go)">پرداخت: ${fp(paid)}</span>
+      <span style="color:${rem>0?'var(--danger)':'var(--go)'}">مانده: ${fp(rem)}</span>
+    </div>
+  </div>`;
+}
+
+/* ════ NEW ════ */
+function pgNew(){
+  const doorRows=DOORS.map((d,i)=>doorRowHtml(d,i)).join("");
+  const accRows=ACCS.map((a,i)=>`
+    <tr id="ar_${a.id}">
+      <td style="text-align:center;font-weight:800;color:var(--blue);font-size:11px">${i+1}</td>
+      <td><select id="aa_${a.id}" onchange="aSel('${a.id}',this.value)">
+        <option value="">نوع...</option>
+        ${P.accTypes.map(t=>`<option value="${t.id}"${a.aid===t.id?" selected":""}>${t.name}(${t.unit})</option>`).join("")}
+      </select></td>
+      <td style="width:80px"><input id="aq_${a.id}" type="number" inputmode="decimal" step="0.01" value="${a.qty||''}" placeholder="مقدار" onchange="aSync('${a.id}')"></td>
+      <td id="au_${a.id}" style="font-size:11px;color:var(--dim);width:32px">${getUnit(a.aid)}</td>
+      <td id="ap_${a.id}" style="font-size:11px;font-weight:700;color:var(--go)">${calcAP(a)}</td>
+      <td><button class="del-btn" onclick="delAcc('${a.id}')"${ACCS.length===1?" disabled":""}>✕</button></td>
+    </tr>`).join("");
+
+  return`
+  <div class="card">
+    <div class="st">🎙️ ورودی صوتی</div>
+    <div style="font-size:11px;color:var(--dim);margin-bottom:9px;line-height:1.7">دکمه میکروفون را بزنید و مشخصات درب را بگویید.</div>
+    <div class="vrow">
+      <input id="voiceOut" placeholder="گفتار شما اینجا نوشته می‌شود..." style="background:#f0f9ff">
+      <button id="micbtn" class="micbtn" onclick="toggleRec()">🎙️</button>
+    </div>
+    <div id="recStatus"></div>
+  </div>
+  <div class="card">
+    <div class="st">👤 مشتری</div>
+    <div class="r2">
+      <div class="f"><label class="lbl">نام و نام‌خانوادگی</label>
+        <div class="ac-wrap" id="cnWrap">
+          <input id="f_cn" placeholder="نام مشتری..." autocomplete="off" oninput="acSearch(this.value)" onfocus="acSearch(this.value)">
+          <div class="ac-list" id="acList" style="display:none"></div>
+        </div>
+      </div>
+      <div class="f"><label class="lbl">موبایل</label><input id="f_cp" type="tel" placeholder="۰۹۱۲..." inputmode="numeric"></div>
+    </div>
+    <div class="f"><label class="lbl">📅 تاریخ فاکتور</label><input id="f_date" value="${nowFa()}"></div>
+  </div>
+  <div class="card" style="overflow-x:auto">
+    <div class="st">🚪 سازه — دهانه‌های درب</div>
+    <table class="dtbl">
+      <thead><tr><th>#</th><th>محصول</th><th>رنگ</th><th>نصب رول</th><th>عرض م</th><th>ارتفاع م</th><th>متراژ</th><th>مبلغ(ت)</th><th></th></tr></thead>
+      <tbody id="dTb">${doorRows}</tbody>
+      <tfoot><tr><td colspan="6" style="text-align:right;color:var(--dim)">جمع سازه</td><td id="ft_da"></td><td id="ft_dp" colspan="2"></td></tr></tfoot>
+    </table>
+    <button class="add-row" onclick="addDoor()">➕ دهانه جدید</button>
+  </div>
+  <div class="card" style="overflow-x:auto">
+    <div class="st">🔧 متعلقات</div>
+    <table class="dtbl">
+      <thead><tr><th>#</th><th>نوع</th><th>مقدار</th><th>واحد</th><th>مبلغ(ت)</th><th></th></tr></thead>
+      <tbody id="aTb">${accRows}</tbody>
+      <tfoot><tr><td colspan="4" style="text-align:right;color:var(--dim)">جمع متعلقات</td><td id="ft_ap" colspan="2"></td></tr></tfoot>
+    </table>
+    <button class="add-row" onclick="addAcc()">➕ ردیف متعلقات</button>
+  </div>
+  <div class="card">
+    <div class="st">📝 توضیحات فاکتور</div>
+    <textarea id="f_notes" placeholder="آدرس نصب، نکات خاص..."></textarea>
+    ${P.fixedNotes.length?`<div style="background:#fffbeb;border-radius:8px;padding:9px;margin-top:8px;font-size:11px;color:#92400e;line-height:1.8">📌 <b>توضیحات ثابت:</b><br>${P.fixedNotes.map(n=>"• "+n).join("<br>")}</div>`:""}
+  </div>
+  <div class="sumbox">
+    <div style="font-weight:800;font-size:14px;margin-bottom:10px">💰 خلاصه فاکتور</div>
+    <div class="srow"><span>جمع سازه</span><span id="s_dt">—</span></div>
+    <div class="srow"><span>جمع متعلقات</span><span id="s_at">—</span></div>
+    <div class="stot" id="s_tot">—</div>
+  </div>
+  <button class="btn bg bfull bbig" onclick="subInv()">✅ ثبت فاکتور</button>
+  <div style="height:8px"></div>`;
+}
+
+function doorRowHtml(d,i){
+  const scolRequired=parseInt(d.rc||0)>0;
+  return`
+    <tr id="dr_${d.id}">
+      <td style="text-align:center;font-weight:800;color:var(--blue);font-size:11px;width:18px">${i+1}</td>
+      <td style="min-width:105px"><select id="dp_${d.id}" onchange="dSel('${d.id}','pid',this.value)">
+        <option value="">انتخاب...</option>
+        ${P.products.map(p=>`<option value="${p.id}"${d.pid===p.id?" selected":""}>${p.name}</option>`).join("")}
+      </select></td>
+      <td style="min-width:70px"><select id="dc_${d.id}" onchange="dSel('${d.id}','cid',this.value)">
+        <option value="">رنگ...</option>
+        ${P.colors.map(co=>`<option value="${co.id}"${d.cid===co.id?" selected":""}>${co.name}</option>`).join("")}
+      </select></td>
+      <td style="min-width:75px"><div class="rt-grp">
+        <button class="rt-btn${d.rt==='in'?' on':''}" onclick="dSel('${d.id}','rt','in')">داخل</button>
+        <button class="rt-btn${d.rt==='out'?' on':''}" onclick="dSel('${d.id}','rt','out')">بیرون</button>
+      </div></td>
+      <td style="width:68px"><input id="dw_${d.id}" type="number" inputmode="decimal" step="0.01" value="${d.w||''}" placeholder="عرض" onchange="dSync('${d.id}')"></td>
+      <td style="width:68px"><input id="dh_${d.id}" type="number" inputmode="decimal" step="0.01" value="${d.h||''}" placeholder="ارتفاع" onchange="dSync('${d.id}')"></td>
+      <td id="da_${d.id}" style="text-align:center;font-size:11px;font-weight:700;color:var(--sky);white-space:nowrap">${calcDA(d)}</td>
+      <td id="dp2_${d.id}" style="text-align:left;font-size:11px;font-weight:700;color:var(--go);white-space:nowrap">${calcDP(d)}</td>
+      <td><button class="del-btn" onclick="delDoor('${d.id}')"${DOORS.length===1?" disabled":""}>✕</button></td>
+    </tr>
+    <tr id="dr2_${d.id}" class="sub-row">
+      <td></td>
+      <td colspan="4">
+        <label style="color:var(--dim);font-weight:700;font-size:10px">تیغه رنگ خاص:</label>
+        <input class="si2" id="drc_${d.id}" type="number" inputmode="numeric" value="${parseInt(d.rc||0)>0?d.rc:''}" placeholder="۰" onchange="dSel('${d.id}','rc',this.value)">
+        &nbsp;
+        <label style="color:${scolRequired?'#dc2626':'var(--dim)'};font-weight:700;font-size:10px">رنگ ویژه${scolRequired?' *':''}:</label>
+        <select class="sl2" id="dsc_${d.id}" style="border-color:${scolRequired&&!d.scol?'#dc2626':'var(--line)'}" onchange="dSel('${d.id}','scol',this.value)">
+          <option value="">انتخاب...</option>
+          ${P.colors.filter(co=>co.id!==d.cid).map(co=>`<option value="${co.id}"${d.scol===co.id?" selected":""}>${co.name}</option>`).join("")}
+        </select>
+        &nbsp;
+        <label style="color:var(--dim);font-weight:700;font-size:10px">پانچ:</label>
+        <input class="si2" id="dpc_${d.id}" type="number" inputmode="numeric" value="${parseInt(d.pc||0)>0?d.pc:''}" placeholder="۰" onchange="dSel('${d.id}','pc',this.value)">
+        <span id="dcalc_${d.id}" style="color:var(--blue);font-weight:700;font-size:10px;margin-right:5px"></span>
+      </td>
+      <td colspan="4">
+        <label style="color:var(--dim);font-weight:700;font-size:10px">رنگ ریل:</label>
+        <select class="sl2" id="drc2_${d.id}" onchange="dSel('${d.id}','rcol',this.value)">
+          ${P.colors.map(co=>`<option value="${co.id}"${(d.rcol||d.cid)===co.id?" selected":""}>${co.name}</option>`).join("")}
+        </select>
+        &nbsp;
+        <label style="color:var(--dim);font-weight:700;font-size:10px">تیغه انتهایی:</label>
+        <select class="sl2" id="det_${d.id}" onchange="dSel('${d.id}','et',this.value)">
+          <option value="galv"${(d.et||'galv')==='galv'?" selected":""}>گالوانیزه</option>
+          <option value="alum"${d.et==='alum'?" selected":""}>آلومینیوم</option>
+        </select>
+        &nbsp;
+        <label style="color:var(--dim);font-weight:700;font-size:10px">رنگ انتهایی:</label>
+        <select class="sl2" id="dec_${d.id}" onchange="dSel('${d.id}','ecol',this.value)">
+          ${P.colors.map(co=>`<option value="${co.id}"${(d.ecol||d.cid)===co.id?" selected":""}>${co.name}</option>`).join("")}
+        </select>
+        &nbsp;
+        <label style="color:var(--dim);font-weight:700;font-size:10px">کد سفارش:</label>
+        <select class="sl2" id="doc_${d.id}" onchange="dSel('${d.id}','oc',this.value)">
+          <option value="تولید"${(d.oc||'تولید')==='تولید'?" selected":""}>تولید</option>
+          <option value="موجودی"${d.oc==='موجودی'?" selected":""}>موجودی</option>
+        </select>
+        &nbsp;
+        <label style="color:var(--dim);font-weight:700;font-size:10px">توضیح تولید:</label>
+        <input class="si2" style="width:90px" id="dnt_${d.id}" value="${d.nt||''}" placeholder="..." onchange="dSel('${d.id}','nt',this.value)">
+      </td>
+    </tr>`;
+}
+
+function calcDA(d){const w=parseFloat(d.w)||0,h=parseFloat(d.h)||0,a=w*h;return a>0?a.toFixed(2)+' م²':'—'}
+function calcDP(d){const w=parseFloat(d.w)||0,h=parseFloat(d.h)||0,a=w*h,pr=P.products.find(p=>p.id===d.pid),price=a*(pr?.ppm||0);return price>0?price.toLocaleString("fa-IR"):'—'}
+function calcAP(a){const tp=P.accTypes.find(t=>t.id===a.aid),price=(parseFloat(a.qty)||0)*(tp?.ppu||0);return price>0?price.toLocaleString("fa-IR"):'—'}
+function getUnit(aid){return P.accTypes.find(t=>t.id===aid)?.unit||''}
+
+function dSel(did,key,val){
+  DOORS=DOORS.map(d=>d.id===did?{...d,[key]:val}:d);
+  if(key==='rt'){const row=document.getElementById("dr_"+did);if(row)row.querySelectorAll('.rt-btn').forEach(b=>b.classList.toggle('on',(b.textContent==='داخل'&&val==='in')||(b.textContent==='بیرون'&&val==='out')));}
+  // update scol required indicator when rc changes
+  if(key==='rc'){
+    const rcVal=parseInt(val||0)>0;
+    const scolLbl=document.querySelector(`#dr2_${did} label:nth-of-type(2)`);
+    const scolSel=document.getElementById("dsc_"+did);
+    if(scolSel){scolSel.style.borderColor=rcVal&&!document.getElementById("dsc_"+did)?.value?'#dc2626':'var(--line)';}
+  }
+  refDR(did);updSum();
+}
+function dSync(did){
+  DOORS=DOORS.map(d=>d.id===did?{...d,w:elv("dw_"+did)||d.w,h:elv("dh_"+did)||d.h}:d);
+  refDR(did);updSum();
+}
+function refDR(did){
+  const d=DOORS.find(x=>x.id===did);if(!d)return;
+  const w=parseFloat(elv("dw_"+did)||d.w)||0,h=parseFloat(elv("dh_"+did)||d.h)||0,a=w*h;
+  const pr=P.products.find(p=>p.id===(elv("dp_"+did)||d.pid)),price=a*(pr?.ppm||0);
+  const da=document.getElementById("da_"+did),dp2=document.getElementById("dp2_"+did);
+  if(da)da.textContent=a>0?a.toFixed(2)+' م²':'—';
+  if(dp2)dp2.textContent=price>0?price.toLocaleString("fa-IR"):'—';
+  const tiles=Math.round(h*100/7.5);
+  const rc=parseInt(elv("drc_"+did)||d.rc||0),pc=parseInt(elv("dpc_"+did)||d.pc||0);
+  const plain=Math.max(0,tiles-rc-pc-1);
+  const calc=document.getElementById("dcalc_"+did);
+  if(calc&&tiles>0)calc.textContent=`| تیغه: ${tiles} (${plain}+${rc}+${pc}+1)`;
+}
+
+function addDoor(){
+  const d=nd();DOORS.push(d);
+  const tbody=document.getElementById("dTb");if(!tbody)return;
+  const frag=document.createDocumentFragment();
+  const tmp=document.createElement("tbody");
+  tmp.innerHTML=doorRowHtml(d,DOORS.length-1);
+  while(tmp.firstChild)frag.appendChild(tmp.firstChild);
+  tbody.appendChild(frag);
+  updSum();
+}
+function delDoor(did){
+  if(DOORS.length===1)return;
+  DOORS=DOORS.filter(d=>d.id!==did);
+  document.getElementById("dr_"+did)?.remove();
+  document.getElementById("dr2_"+did)?.remove();
+  document.querySelectorAll("#dTb tr[id^='dr_']").forEach((tr,i)=>{const c=tr.querySelectorAll("td");if(c[0])c[0].textContent=i+1;});
+  updSum();
+}
+function aSel(aid,val){
+  ACCS=ACCS.map(a=>a.id===aid?{...a,aid:val}:a);
+  const u=document.getElementById("au_"+aid);if(u)u.textContent=getUnit(val);
+  refAR(aid);updSum();
+}
+function aSync(aid){ACCS=ACCS.map(a=>a.id===aid?{...a,qty:elv("aq_"+aid)||a.qty}:a);refAR(aid);updSum();}
+function refAR(aid){
+  const a=ACCS.find(x=>x.id===aid);if(!a)return;
+  const tp=P.accTypes.find(t=>t.id===(elv("aa_"+aid)||a.aid)),price=(parseFloat(elv("aq_"+aid)||a.qty)||0)*(tp?.ppu||0);
+  const ap=document.getElementById("ap_"+aid);if(ap)ap.textContent=price>0?price.toLocaleString("fa-IR"):'—';
+}
+function addAcc(){
+  const a=na();ACCS.push(a);
+  const tbody=document.getElementById("aTb");if(!tbody)return;
+  const tr=document.createElement("tr");tr.id="ar_"+a.id;
+  tr.innerHTML=`<td style="text-align:center;font-weight:800;color:var(--blue);font-size:11px">${ACCS.length}</td>
+    <td><select id="aa_${a.id}" onchange="aSel('${a.id}',this.value)"><option value="">نوع...</option>${P.accTypes.map(t=>`<option value="${t.id}">${t.name}(${t.unit})</option>`).join("")}</select></td>
+    <td style="width:80px"><input id="aq_${a.id}" type="number" inputmode="decimal" step="0.01" placeholder="مقدار" onchange="aSync('${a.id}')"></td>
+    <td id="au_${a.id}" style="font-size:11px;color:var(--dim);width:32px"></td>
+    <td id="ap_${a.id}" style="font-size:11px;font-weight:700;color:var(--go)">—</td>
+    <td><button class="del-btn" onclick="delAcc('${a.id}')">✕</button></td>`;
+  tbody.appendChild(tr);updSum();
+}
+function delAcc(aid){
+  if(ACCS.length===1)return;ACCS=ACCS.filter(a=>a.id!==aid);
+  document.getElementById("ar_"+aid)?.remove();
+  document.querySelectorAll("#aTb tr").forEach((tr,i)=>{const c=tr.querySelectorAll("td");if(c[0])c[0].textContent=i+1;});
+  updSum();
+}
+function updSum(){
+  const doors=DOORS.map(d=>({...d,pid:elv("dp_"+d.id)||d.pid,w:elv("dw_"+d.id)||d.w,h:elv("dh_"+d.id)||d.h}));
+  const accs=ACCS.map(a=>({...a,aid:elv("aa_"+a.id)||a.aid,qty:elv("aq_"+a.id)||a.qty}));
+  const cl=calcTotals(doors,accs);
+  const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v};
+  set("s_dt",fp(cl.dt));set("s_at",fp(cl.at));set("s_tot",fp(cl.tot));
+  const tA=doors.reduce((s,d)=>s+(parseFloat(d.w)||0)*(parseFloat(d.h)||0),0);
+  set("ft_da",tA>0?tA.toFixed(2)+' م²':'');set("ft_dp",cl.dt>0?cl.dt.toLocaleString("fa-IR"):'');
+  set("ft_ap",cl.at>0?cl.at.toLocaleString("fa-IR"):'');
+}
+
+/* ════ SUBMIT ════ */
+function subInv(){
+  const cn=(elv("f_cn")||"").trim(),cp=(elv("f_cp")||"").trim();
+  if(!cn||!cp){alert("لطفاً نام و موبایل مشتری را وارد کنید");return;}
+  // validate special color - only if select exists in DOM
+  for(let i=0;i<DOORS.length;i++){
+    const d=DOORS[i];
+    const rcv=parseInt(elv("drc_"+d.id)||d.rc||0);
+    const scolEl=document.getElementById("dsc_"+d.id);
+    const scolv=scolEl?scolEl.value:(d.scol||"");
+    if(rcv>0&&!scolv&&scolEl){alert("دهانه "+(i+1)+": رنگ ویژه تیغه خاص را انتخاب کنید.");return;}
+  }
+  const doors=DOORS.map(d=>{
+    const pid=elv("dp_"+d.id)||d.pid,cid=elv("dc_"+d.id)||d.cid;
+    const w=elv("dw_"+d.id)||d.w,h=elv("dh_"+d.id)||d.h;
+    const pr=P.products.find(p=>p.id===pid),col=P.colors.find(c=>c.id===cid);
+    const a=(parseFloat(w)||0)*(parseFloat(h)||0);
+    const rc=parseInt(elv("drc_"+d.id)||d.rc||0);
+    const pc=parseInt(elv("dpc_"+d.id)||d.pc||0);
+    const nt=elv("dnt_"+d.id)||d.nt||"";
+    const scol=elv("dsc_"+d.id)||d.scol||"";
+    const rcol=elv("drc2_"+d.id)||d.rcol||cid;
+    const et=elv("det_"+d.id)||d.et||"galv";
+    const ecol=elv("dec_"+d.id)||d.ecol||cid;
+    const oc=elv("doc_"+d.id)||d.oc||"تولید";
+    const tiles=Math.round((parseFloat(h)||0)*100/7.5);
+    const railLen=Math.max(0,((parseFloat(h)||0)*100-30)/100);
+    return{pid,cid,rt:d.rt,w,h,
+      pname:pr?.name||"",colName:col?.name||"",
+      rcolName:P.colors.find(c=>c.id===rcol)?.name||"",
+      scolName:P.colors.find(c=>c.id===scol)?.name||"",
+      ecolName:P.colors.find(c=>c.id===ecol)?.name||"",
+      area:a,price:a*(pr?.ppm||0),
+      rc,pc,nt,scol,rcol,et,ecol,oc,tiles,railLen};
+  });
+  const accs=ACCS.map(a=>{
+    const aid=elv("aa_"+a.id)||a.aid,qty=elv("aq_"+a.id)||a.qty;
+    const tp=P.accTypes.find(t=>t.id===aid);
+    return{aid,qty,aname:tp?.name||"",unit:tp?.unit||"",price:(parseFloat(qty)||0)*(tp?.ppu||0)};
+  }).filter(a=>a.aid&&parseFloat(a.qty)>0);
+  const cl=calcTotals(doors,accs);
+  const notes=elv("f_notes")||"";
+  const fixedPart=P.fixedNotes.length?"\n\n📌 شرایط فروش:\n"+P.fixedNotes.map(n=>"• "+n).join("\n"):"";
+  const inv={id:uid(),num:nextN(),date:elv("f_date")||nowFa(),cust:{nm:cn,ph:cp},doors,accs,notes:(notes+fixedPart).trim(),c:cl,pays:[],status:"pend"};
+  INV.push(inv);sv();go("detail",inv.id);
+}
+
+/* ════ VOICE ════ */
+let recog=null,REC="idle";
+function toggleRec(){if(REC==="rec"){stopRec();return;}startRec();}
+function startRec(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){alert("لطفاً از Chrome استفاده کنید.");return;}
+  recog=new SR();
+  recog.lang="fa-IR";
+  recog.interimResults=true;
+  recog.continuous=true;
+  recog.maxAlternatives=1;
+
+  let pauseTimer=null;
+  let finalText="";
+
+  recog.onstart=()=>{
+    REC="rec"; finalText="";
+    const mb=document.getElementById("micbtn");
+    if(mb){mb.className="micbtn rec";mb.innerHTML='<div class="rpl"></div>⏹';}
+    const st=document.getElementById("recStatus");
+    if(st){st.className="rst rec";st.textContent="🔴 صحبت کنید — بعد از مکث پردازش می‌شود...";}
+  };
+
+  recog.onresult=e=>{
+    let interim="";
+    for(let i=e.resultIndex;i<e.results.length;i++){
+      if(e.results[i].isFinal) finalText+=e.results[i][0].transcript+" ";
+      else interim+=e.results[i][0].transcript;
+    }
+    const vo=document.getElementById("voiceOut");
+    if(vo){vo.value=(finalText+interim).trim();vo.style.background="#fffbeb";}
+
+    // after 1.5s pause, stop and process
+    clearTimeout(pauseTimer);
+    pauseTimer=setTimeout(()=>{
+      try{recog.stop();}catch(e){}
+    },1500);
+  };
+
+  recog.onend=()=>{
+    clearTimeout(pauseTimer);
+    REC="idle";
+    const mb=document.getElementById("micbtn");
+    if(mb){mb.className="micbtn";mb.innerHTML="🎙️";}
+    const st=document.getElementById("recStatus");
+    if(st) st.textContent="⚙️ در حال پردازش...";
+    const vo=document.getElementById("voiceOut");
+    const txt=(vo?.value||"").trim();
+    if(txt&&!txt.startsWith("✅")&&!txt.startsWith("⚠️")){
+      setTimeout(()=>parseVoice(txt),100);
+    } else if(st) st.textContent="";
+  };
+
+  recog.onerror=err=>{
+    clearTimeout(pauseTimer);
+    REC="idle";
+    const mb=document.getElementById("micbtn");
+    if(mb){mb.className="micbtn";mb.innerHTML="🎙️";}
+    const st=document.getElementById("recStatus");if(st)st.textContent="";
+    if(err.error==="not-allowed") alert("دسترسی به میکروفون رد شد.");
+  };
+
+  try{recog.start();}catch(e){REC="idle";}
+}
+
+function stopRec(){
+  try{recog?.stop();}catch(e){}
+  REC="idle";
+  const mb=document.getElementById("micbtn");
+  if(mb){mb.className="micbtn";mb.innerHTML="🎙️";}
+  const st=document.getElementById("recStatus");
+  if(st)st.textContent="";
+}
+
+/* ════ AUTOCOMPLETE ════ */
+let acIdx=-1;
+function getCusts(){const map={};INV.forEach(inv=>{const ph=inv.cust?.ph||"";if(!ph)return;if(!map[ph])map[ph]={nm:inv.cust?.nm||"",ph,count:0,lastDate:inv.date||""};map[ph].count++;map[ph].lastDate=inv.date||map[ph].lastDate;});return Object.values(map).sort((a,b)=>b.count-a.count);}
+function acSearch(val){
+  const list=document.getElementById("acList");if(!list)return;
+  const q=val.trim(),fil=q.length===0?getCusts():getCusts().filter(c=>c.nm.includes(q)||c.ph.includes(q));
+  if(!fil.length){list.style.display="none";return;}
+  acIdx=-1;
+  list.innerHTML=fil.slice(0,8).map((c,i)=>`<div class="ac-item" onclick="acPick('${c.nm.replace(/'/g,"\\'")}','${c.ph}')"><div style="font-size:13px;font-weight:700">${c.nm}</div><div style="font-size:11px;color:var(--dim)">📱 ${c.ph} | 📄 ${c.count} فاکتور</div></div>`).join("");
+  list.style.display="block";
+}
+function acPick(nm,ph){const e1=document.getElementById("f_cn"),e2=document.getElementById("f_cp");if(e1)e1.value=nm;if(e2)e2.value=ph;acClose();}
+function acClose(){const l=document.getElementById("acList");if(l)l.style.display="none";acIdx=-1;}
+
+/* ════ AFTER RENDER ════ */
+/* ════ LOCAL VOICE PARSER (no API needed) ════ */
+function parseVoice(txt){
+  if(!txt) return;
+
+  // ── normalize digits and fractions
+  let t = txt
+    .replace(/۰/g,'0').replace(/۱/g,'1').replace(/۲/g,'2').replace(/۳/g,'3')
+    .replace(/۴/g,'4').replace(/۵/g,'5').replace(/۶/g,'6').replace(/۷/g,'7')
+    .replace(/۸/g,'8').replace(/۹/g,'9')
+    .replace(/یک و نیم/g,'1.5').replace(/دو و نیم/g,'2.5').replace(/سه و نیم/g,'3.5')
+    .replace(/چهار و نیم/g,'4.5').replace(/پنج و نیم/g,'5.5').replace(/شش و نیم/g,'6.5')
+    .replace(/یک و ربع/g,'1.25').replace(/دو و ربع/g,'2.25').replace(/سه و ربع/g,'3.25')
+    .replace(/نیم/g,'0.5')
+    .replace(/\bیک\b/g,'1').replace(/\bدو\b/g,'2').replace(/\bسه\b/g,'3')
+    .replace(/\bچهار\b/g,'4').replace(/\bپنج\b/g,'5').replace(/\bشش\b/g,'6')
+    .replace(/\bهفت\b/g,'7').replace(/\bهشت\b/g,'8').replace(/\bنه\b/g,'9')
+    .replace(/\bده\b/g,'10').replace(/\bیازده\b/g,'11').replace(/\bدوازده\b/g,'12')
+    .replace(/\bسیزده\b/g,'13').replace(/\bچهارده\b/g,'14').replace(/\bپانزده\b/g,'15')
+    .replace(/\bبیست\b/g,'20').replace(/\bسی\b/g,'30').replace(/\bچهل\b/g,'40')
+    .replace(/\bپنجاه\b/g,'50').replace(/\bشصت\b/g,'60')
+    .replace(/متر/g,' ').replace(/\bعدد\b/g,' ').replace(/\bتا\b/g,' ');
+
+  const results = [];
+
+  // ── figure out which door we're talking about
+  // "دهانه دو" or "دهنه سوم" or just apply to last door
+  let doorNum = -1; // -1 = last added door
+  const dNumMatch = t.match(/(?:دهانه|دهنه)\s*(\d+)/);
+  if(dNumMatch){
+    doorNum = parseInt(dNumMatch[1]) - 1; // 0-based
+  }
+  // if door index out of range, use 0
+  if(doorNum < 0 || doorNum >= DOORS.length) doorNum = DOORS.length - 1;
+  const did = DOORS[doorNum]?.id;
+  if(!did){ showVoiceResult([],'دهانه‌ای موجود نیست'); return; }
+
+  // ── add new door
+  if(txt.includes('دهانه جدید')||txt.includes('دهنه جدید')||txt.includes('درب جدید')){
+    addDoor();
+    results.push('✅ دهانه '+DOORS.length+' اضافه شد');
+    showVoiceResult(results,'');
+    return;
+  }
+
+  // ── Product type
+  const prodMap = [
+    {keys:['تک جداره فول پانچ','تک‌جداره فول‌پانچ','فول پانچ','فول‌پانچ','فول پانج'], id: P.products.find(p=>p.name.includes('فول'))?.id},
+    {keys:['دوجداره عایق','دو جداره عایق','عایق دار','عایق‌دار'], id: P.products.find(p=>p.name.includes('عایق'))?.id},
+    {keys:['دو جداره','دوجداره','دو‌جداره'], id: P.products.find(p=>p.name.includes('دوجداره')&&!p.name.includes('عایق'))?.id},
+    {keys:['ضد سرقت','ضدسرقت','ضد‌سرقت'], id: P.products.find(p=>p.name.includes('ضدسرقت'))?.id},
+    {keys:['تک جداره','تک‌جداره','تکجداره'], id: P.products.find(p=>p.name.includes('تک')&&!p.name.includes('فول'))?.id},
+  ];
+  for(const pm of prodMap){
+    if(pm.id && pm.keys.some(k=>txt.includes(k))){
+      const el=document.getElementById('dp_'+did);
+      if(el){el.value=pm.id; dSel(did,'pid',pm.id);}
+      results.push('محصول: '+P.products.find(p=>p.id===pm.id)?.name);
+      break;
+    }
+  }
+
+  // ── Color (رنگ دهنه)
+  // avoid matching "رنگ خاص" or "رنگ ویژه" as door color
+  const txtNoSpecial = txt.replace(/رنگ\s*(?:خاص|ویژه)[^،,]*/g,'');
+  for(const col of P.colors){
+    if(txtNoSpecial.includes(col.name)){
+      const el=document.getElementById('dc_'+did);
+      if(el){el.value=col.id; dSel(did,'cid',col.id);}
+      results.push('رنگ: '+col.name);
+      break;
+    }
+  }
+
+  // ── Roll type
+  if(txt.includes('داخلی')||txt.includes('داخل')){
+    dSel(did,'rt','in');
+    results.push('نصب: داخلی');
+  } else if(txt.includes('بیرونی')||txt.includes('بیرون')){
+    dSel(did,'rt','out');
+    results.push('نصب: بیرونی');
+  }
+
+  // ── Width عرض
+  const wMatch = t.match(/عرض\s*(\d+\.?\d*)/);
+  if(wMatch){
+    const el=document.getElementById('dw_'+did);
+    if(el){el.value=wMatch[1]; dSync(did);}
+    results.push('عرض: '+wMatch[1]+' م');
+  }
+
+  // ── Height ارتفاع
+  const hMatch = t.match(/ارتفاع\s*(\d+\.?\d*)/);
+  if(hMatch){
+    const el=document.getElementById('dh_'+did);
+    if(el){el.value=hMatch[1]; dSync(did);}
+    results.push('ارتفاع: '+hMatch[1]+' م');
+  }
+
+  // ── Punch تعداد پانچ
+  const pMatch = t.match(/(?:پانچ|پانج|پونچ)\s*(\d+)/);
+  if(pMatch){
+    const el=document.getElementById('dpc_'+did);
+    if(el){el.value=pMatch[1]; dSel(did,'pc',pMatch[1]);}
+    results.push('پانچ: '+pMatch[1]);
+  }
+
+  // ── Special color count تیغه رنگ خاص/ویژه
+  const rcMatch = t.match(/(?:رنگ\s*(?:خاص|ویژه|ی)|تیغه\s*رنگ(?:ی|خاص)?)\s*(\d+)/);
+  if(rcMatch){
+    const el=document.getElementById('drc_'+did);
+    if(el){el.value=rcMatch[1]; dSel(did,'rc',rcMatch[1]);}
+    results.push('تیغه رنگ خاص: '+rcMatch[1]);
+    // try to find special color name mentioned after رنگ خاص
+    for(const col of P.colors){
+      const afterRc = txt.substring(txt.search(/رنگ\s*(?:خاص|ویژه)/));
+      if(afterRc.includes(col.name)){
+        const scolEl=document.getElementById('dsc_'+did);
+        if(scolEl){scolEl.value=col.id; dSel(did,'scol',col.id);}
+        results.push('رنگ ویژه: '+col.name);
+        break;
+      }
+    }
+  }
+
+  // ── Rail ریل (goes to accessories)
+  const rMatch = t.match(/ریل\s*(\d+\.?\d*)/);
+  if(rMatch){
+    const railType=P.accTypes.find(a=>a.name.includes('ریل'));
+    if(railType){
+      // find empty acc row or use first
+      let accRow = ACCS.find(a=>!a.aid||a.aid===railType.id);
+      if(!accRow){ addAcc(); accRow=ACCS[ACCS.length-1]; }
+      const aEl=document.getElementById('aa_'+accRow.id);
+      if(aEl){aEl.value=railType.id; aSel(accRow.id,railType.id);}
+      const qEl=document.getElementById('aq_'+accRow.id);
+      if(qEl){qEl.value=rMatch[1]; aSync(accRow.id);}
+    }
+    results.push('ریل: '+rMatch[1]+' م');
+  }
+
+  // ── Shaft شفت
+  const shMatch = t.match(/شفت\s*(\d+\.?\d*)/);
+  if(shMatch){
+    const shType=P.accTypes.find(a=>a.name.includes('شفت'));
+    if(shType){
+      let accRow=ACCS.find(a=>!a.aid||a.aid===shType.id);
+      if(!accRow){addAcc();accRow=ACCS[ACCS.length-1];}
+      const aEl=document.getElementById('aa_'+accRow.id);
+      if(aEl){aEl.value=shType.id;aSel(accRow.id,shType.id);}
+      const qEl=document.getElementById('aq_'+accRow.id);
+      if(qEl){qEl.value=shMatch[1];aSync(accRow.id);}
+    }
+    results.push('شفت: '+shMatch[1]+' م');
+  }
+
+  // ── Converter تبدیل
+  const cvMatch = t.match(/تبدیل\s*(\d+)/);
+  if(cvMatch){
+    const cvType=P.accTypes.find(a=>a.name.includes('تبدیل'));
+    if(cvType){
+      let accRow=ACCS.find(a=>!a.aid||a.aid===cvType.id);
+      if(!accRow){addAcc();accRow=ACCS[ACCS.length-1];}
+      const aEl=document.getElementById('aa_'+accRow.id);
+      if(aEl){aEl.value=cvType.id;aSel(accRow.id,cvType.id);}
+      const qEl=document.getElementById('aq_'+accRow.id);
+      if(qEl){qEl.value=cvMatch[1];aSync(accRow.id);}
+    }
+    results.push('تبدیل: '+cvMatch[1]+' عدد');
+  }
+
+  // ── Customer name مشتری
+  const custMatch = txt.match(/(?:مشتری|اسم|نام)\s+([^\s،,]+(?:\s+[^\s،,]+)?)/);
+  if(custMatch){
+    const el=document.getElementById('f_cn');
+    if(el) el.value=custMatch[1];
+    results.push('مشتری: '+custMatch[1]);
+  }
+
+  // ── Phone موبایل
+  const phoneMatch = txt.match(/(\d{10,11})/);
+  if(phoneMatch){
+    const el=document.getElementById('f_cp');
+    if(el) el.value=phoneMatch[1];
+    results.push('موبایل: '+phoneMatch[1]);
+  }
+
+  // ── Notes توضیحات
+  const notesMatch = txt.match(/توضیح(?:ات)?\s+(.+)/);
+  if(notesMatch){
+    const el=document.getElementById('f_notes');
+    if(el) el.value=notesMatch[1];
+    results.push('توضیحات ثبت شد');
+  }
+
+  updSum();
+  showVoiceResult(results, '');
+}
+
+function showVoiceResult(results, errMsg){
+  const vo=document.getElementById('voiceOut');
+  const st=document.getElementById('recStatus');
+  if(st) st.textContent="";
+  if(!vo) return;
+  if(errMsg){
+    vo.style.background='#fef2f2'; vo.style.borderColor='#dc2626';
+    vo.value='⚠️ '+errMsg; return;
+  }
+  if(results.length>0){
+    vo.style.background='#f0fdf4'; vo.style.borderColor='#059669';
+    vo.value='✅ '+results.join(' | ');
+  } else {
+    vo.style.background='#fef2f2'; vo.style.borderColor='#dc2626';
+    vo.value='⚠️ چیزی شناسایی نشد — واضح‌تر بگویید';
+  }
+}
+
+
+function afterRender(){
+  const hd=document.getElementById("hdrDate");if(hd)hd.textContent="📅 "+nowFa();
+  document.addEventListener("click",e=>{if(!e.target.closest("#cnWrap"))acClose();},{once:true});
+  // hide nav when keyboard opens
+  if(window.visualViewport){
+    const nav=document.querySelector('.bnav');
+    window.visualViewport.onresize=()=>{
+      if(!nav)return;
+      nav.style.display=window.visualViewport.height<window.innerHeight*0.8?'none':'flex';
+    };
+  }
+  if(PAGE==="new") setTimeout(updSum,50);
+  if(PAGE==="edit"){
+    setTimeout(()=>{
+      const inv=INV.find(i=>i.id===SEL); if(!inv) return;
+      const set=(id,v)=>{const e=document.getElementById(id);if(e)e.value=v;};
+      set("f_cn",inv.cust?.nm||"");
+      set("f_cp",inv.cust?.ph||"");
+      set("f_date",inv.date||nowFa());
+      set("f_notes",inv.notes||"");
+      DOORS.forEach(d=>{
+        const pid=elv("dp_"+d.id)||"";
+        if(d.pid){set("dp_"+d.id,d.pid);dSel(d.id,"pid",d.pid);}
+        if(d.cid){set("dc_"+d.id,d.cid);dSel(d.id,"cid",d.cid);}
+        if(d.rt) dSel(d.id,"rt",d.rt);
+        set("dw_"+d.id,d.w||"");
+        set("dh_"+d.id,d.h||"");
+        set("drc_"+d.id,d.rc>0?d.rc:"");
+        set("dpc_"+d.id,d.pc>0?d.pc:"");
+        set("dnt_"+d.id,d.nt||"");
+        if(d.rcol) set("drc2_"+d.id,d.rcol);
+        if(d.et)   set("det_"+d.id,d.et);
+        if(d.ecol) set("dec_"+d.id,d.ecol);
+        if(d.scol) set("dsc_"+d.id,d.scol);
+        if(d.oc)   set("doc_"+d.id,d.oc);
+        dSync(d.id);
+      });
+      ACCS.forEach(a=>{
+        if(a.aid){set("aa_"+a.id,a.aid);aSel(a.id,a.aid);}
+        set("aq_"+a.id,a.qty||"");
+        aSync(a.id);
+      });
+      updSum();
+    },150);
+  }
+}
+
+/* ════ LIST ════ */
+function pgList(){
+  const fil=[...INV].reverse().filter(i=>(i.cust?.nm||"").includes(Q)||(i.cust?.ph||"").includes(Q)||(i.num||"").includes(Q));
+  return`<input class="sb" placeholder="🔍 جستجو..." value="${Q}" oninput="Q=this.value;reList()">
+  <div id="lw">${fil.length?fil.map(iCard).join(""):`<div class="empty"><div class="ei">📄</div>فاکتوری یافت نشد</div>`}</div>`;
+}
+function reList(){
+  const fil=[...INV].reverse().filter(i=>(i.cust?.nm||"").includes(Q)||(i.cust?.ph||"").includes(Q)||(i.num||"").includes(Q));
+  const w=document.getElementById("lw");if(w)w.innerHTML=fil.length?fil.map(iCard).join(""):`<div class="empty"><div class="ei">📄</div>فاکتوری یافت نشد</div>`;
+}
+
+/* ════ DETAIL ════ */
+function pgDetail(){
+  const inv=INV.find(i=>i.id===SEL);if(!inv)return`<div class="empty"><div class="ei">⚠️</div>یافت نشد</div>`;
+  const paid=inv.pays?.reduce((s,p)=>s+p.amt,0)||0,rem=inv.c.tot-paid,done=rem<=0;
+  const inProd=PROD.find(p=>p.invId===inv.id);
+  const dRows=(inv.doors||[]).map((d,i)=>`<tr>
+    <td style="text-align:center;font-size:11px;font-weight:700;color:var(--blue)">${i+1}</td>
+    <td style="font-size:11px">${d.pname||'-'}</td><td style="font-size:11px">${d.colName||'-'}</td>
+    <td style="font-size:11px">${d.rt==='in'?'داخلی':d.rt==='out'?'بیرونی':'-'}</td>
+    <td style="font-size:11px;text-align:center">${d.w}×${d.h}</td>
+    <td style="font-size:11px;font-weight:700;color:var(--sky)">${(d.area||0).toFixed(2)}م²</td>
+    <td style="font-size:11px;font-weight:700;color:var(--go)">${(d.price||0).toLocaleString("fa-IR")}</td></tr>`).join("");
+  const aRows=(inv.accs||[]).map((a,i)=>`<tr>
+    <td style="text-align:center;font-size:11px;font-weight:700;color:var(--blue)">${i+1}</td>
+    <td style="font-size:11px">${a.aname||'-'}</td>
+    <td style="font-size:11px;text-align:center">${a.qty} ${a.unit}</td>
+    <td style="font-size:11px;font-weight:700;color:var(--go)">${(a.price||0).toLocaleString("fa-IR")}</td></tr>`).join("");
+  return`
+  <button class="bbtn" onclick="go('list')">← برگشت</button>
+  <button class="bbtn" style="float:left;color:var(--blue)" onclick="editInv('${inv.id}')">✏️ ویرایش فاکتور</button>
+  <div style="clear:both"></div>
+  <div style="background:linear-gradient(135deg,var(--ink),var(--blue));border-radius:15px;padding:16px;color:#fff;margin-bottom:12px">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div><div style="font-size:19px;font-weight:900">فاکتور #${inv.num}</div><div style="opacity:.6;font-size:11px;margin-top:2px">📅 ${inv.date}</div></div>
+      <span class="badge ${done?'bd':'bp2'}">${done?'✅ تسویه':'⏳ در انتظار'}</span>
+    </div>
+  </div>
+  <div class="card"><div class="st" style="display:flex;justify-content:space-between;align-items:center">
+    <span>👤 مشتری</span>
+    <button class="btn bl" style="padding:5px 10px;font-size:11px" onclick="editCust('${inv.id}')">✏️ ویرایش</button>
+  </div>
+    <div style="font-size:14px;font-weight:700">${inv.cust?.nm}</div>
+    <div style="color:var(--dim);margin-top:3px;font-size:12px">📱 ${inv.cust?.ph}</div>
+  </div>
+  <div class="card" style="overflow-x:auto"><div class="st">🚪 سازه (${inv.doors?.length||0} دهنه)</div>
+    <table class="dtbl"><thead><tr><th>#</th><th>محصول</th><th>رنگ</th><th>نصب</th><th>ابعاد</th><th>متراژ</th><th>مبلغ(ت)</th></tr></thead>
+    <tbody>${dRows}</tbody></table>
+  </div>
+  ${(inv.accs||[]).length?`<div class="card" style="overflow-x:auto"><div class="st">🔧 متعلقات</div>
+    <table class="dtbl"><thead><tr><th>#</th><th>نوع</th><th>مقدار</th><th>مبلغ(ت)</th></tr></thead>
+    <tbody>${aRows}</tbody></table></div>`:''}
+  ${inv.notes?`<div class="card"><div class="st">📝 توضیحات</div><div style="font-size:12px;color:var(--dim);line-height:1.8">${inv.notes.replace(/\n/g,'<br>')}</div></div>`:''}
+  <div class="finbox">
+    <div style="font-size:13px;font-weight:800;color:#166534;margin-bottom:8px">💳 وضعیت مالی</div>
+    <div class="fr"><span>جمع سازه</span><span>${fp(inv.c.dt)}</span></div>
+    ${inv.c.at>0?`<div class="fr"><span>جمع متعلقات</span><span>${fp(inv.c.at)}</span></div>`:''}
+    <div class="fr" style="font-weight:700;border-top:1px solid var(--line);padding-top:5px;margin-top:4px"><span>جمع کل</span><span>${fp(inv.c.tot)}</span></div>
+    <div class="fr" style="color:var(--go)"><span>پرداخت شده</span><span>${fp(paid)}</span></div>
+    <div class="ftot" style="color:${done?'var(--go)':'var(--danger)'}"><span>مانده</span><span>${fp(rem)}</span></div>
+  </div>
+  ${inv.pays?.length?`<div class="card"><div class="st">💰 تاریخچه پرداخت</div>${inv.pays.map(p=>`<div class="pi"><span>📅 ${p.date}${p.note?' — '+p.note:''}</span><span style="color:var(--go);font-weight:700">${fp(p.amt)}</span></div>`).join("")}</div>`:''}
+  <div class="card"><div class="st">➕ ثبت پرداخت</div>
+    <div class="r2">
+      <div class="f" style="flex:2"><label class="lbl">مبلغ (تومان)</label><input type="number" inputmode="numeric" id="pamt" placeholder="مبلغ..."></div>
+      <div class="f"><label class="lbl">توضیح</label><input id="pnote" placeholder="نقدی..."></div>
+    </div>
+    <button class="btn bg bfull" onclick="addPay('${inv.id}')">💾 ثبت پرداخت</button>
+  </div>
+  <div class="card"><div class="st">📨 ارسال و چاپ</div>
+    <div class="r2" style="margin-bottom:8px">
+      <button class="btn bwa bfull" onclick="sendWA('${inv.id}')">📱 واتساپ</button>
+      <button class="btn bsm bfull" onclick="sendSMS2('${inv.id}')">💬 پیامک</button>
+    </div>
+    <button class="btn bfull" style="background:#128C7E;color:#fff;margin-bottom:8px;border-radius:10px;padding:11px" onclick="sendWA('${inv.id}',true)">
+      📱 واتساپ + درخواست تأیید
+    </button>
+
+    <button class="btn bpr bfull" style="margin-bottom:8px" onclick="doPrint('${inv.id}')">🖨️ چاپ / PDF</button>
+    <div style="height:1px;background:var(--line);margin:4px 0 10px"></div>
+    ${inProd
+      ?`<div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:10px;display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:12px;color:var(--go);font-weight:700">✅ در صف تولید</span>
+          <button class="btn br" style="padding:6px 12px;font-size:12px" onclick="removeFromProd('${inv.id}')">حذف</button>
+        </div>`
+      :`<button class="btn bfull bbig" style="background:#7c3aed;color:#fff" onclick="addToProd('${inv.id}')">🏭 ارسال به لیست تولید</button>`
+    }
+  </div>`;
+}
+
+function addPay(id){
+  const amt=parseFloat(document.getElementById("pamt")?.value)||0,note=document.getElementById("pnote")?.value||"";
+  if(!amt){alert("مبلغ را وارد کنید");return;}
+  INV=INV.map(i=>i.id!==id?i:{...i,pays:[...(i.pays||[]),{id:uid(),amt,note,date:nowFa()}]});
+  sv();go("detail",id);
+}
+function buildMsg(inv, withConfirm=false){
+  const paid=inv.pays?.reduce((s,p)=>s+p.amt,0)||0,rem=inv.c.tot-paid;
+  const dl=(inv.doors||[]).map((d,i)=>`  دهنه ${i+1}: ${d.pname}${d.colName?' | '+d.colName:''} | ${d.w}×${d.h}م = ${(d.area||0).toFixed(2)}م² = ${(d.price||0).toLocaleString("fa-IR")} ت`).join("\n");
+  const al=(inv.accs||[]).map(a=>`  ${a.aname}: ${a.qty} ${a.unit} = ${(a.price||0).toLocaleString("fa-IR")} ت`).join("\n");
+  // confirmation link - sends whatsapp message back to you
+  const confirmMsg=`تأیید فاکتور #${inv.num} — ${inv.cust?.nm}`;
+  const myPhone=P.myPhone||"";
+  const confirmLink=myPhone?`\n\n✅ برای تأیید فاکتور روی لینک زیر کلیک کنید:\nhttps://wa.me/98${myPhone.replace(/^0/,"")}?text=${encodeURIComponent(confirmMsg)}`:"";
+  return`🏪 کرکره فولادی\n━━━━━━━━━━\n📄 فاکتور: #${inv.num}\n📅 ${inv.date}\n👤 ${inv.cust?.nm} | 📱 ${inv.cust?.ph}\n━━━━━━━━━━\n🚪 سازه:\n${dl}\n${al?'🔧 متعلقات:\n'+al+'\n':''}━━━━━━━━━━\n💰 جمع: ${inv.c.tot?.toLocaleString("fa-IR")} ت\n✅ پرداخت: ${paid.toLocaleString("fa-IR")} ت\n${rem>0?'⚠️ مانده: '+rem.toLocaleString("fa-IR")+' ت':'✅ تسویه'}${inv.notes?'\n📝 '+inv.notes:''}\n━━━━━━━━━━\nبا تشکر 🙏${withConfirm?confirmLink:''}`;
+}
+function sendWA(id,confirm=false){const i=INV.find(x=>x.id===id);if(!i)return;window.open(`https://wa.me/98${i.cust?.ph?.replace(/^0/,"")}?text=${encodeURIComponent(buildMsg(i,confirm))}`,"_blank");}
+function sendSMS2(id){const i=INV.find(x=>x.id===id);if(!i)return;window.open(`sms:${i.cust?.ph}?body=${encodeURIComponent(buildMsg(i))}`,"_blank");}
+
+function doPrint(id){
+  const inv=INV.find(i=>i.id===id);if(!inv)return;
+  const paid=inv.pays?.reduce((s,p)=>s+p.amt,0)||0,rem=inv.c.tot-paid;
+  const dR=(inv.doors||[]).map((d,i)=>`<tr><td>${i+1}</td><td>${d.pname||'-'}</td><td>${d.colName||'-'}</td><td>${d.rt==='in'?'داخلی':d.rt==='out'?'بیرونی':'-'}</td><td>${d.w}×${d.h}</td><td>${(d.area||0).toFixed(2)}م²</td><td>${(d.price||0).toLocaleString("fa-IR")}</td></tr>`).join("");
+  const aR=(inv.accs||[]).map((a,i)=>`<tr><td>${i+1}</td><td>${a.aname||'-'}</td><td>${a.qty} ${a.unit}</td><td>${(a.price||0).toLocaleString("fa-IR")}</td></tr>`).join("");
+  const pR=(inv.pays||[]).map(p=>`<tr><td>${p.date}</td><td>${p.note||'-'}</td><td>${p.amt.toLocaleString("fa-IR")}</td></tr>`).join("");
+  const html=`<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"><title>فاکتور #${inv.num}</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Vazirmatn',Tahoma;direction:rtl;padding:20px;font-size:12px;color:#000;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.top{display:flex;justify-content:space-between;border-bottom:4px solid #0f2744;padding-bottom:12px;margin-bottom:14px}
+.logo{font-size:18px;font-weight:900;color:#000}
+.cb{background:#f0f4f8;border-radius:8px;padding:10px;margin-bottom:14px;display:flex;justify-content:space-between}
+.sec{font-weight:900;font-size:12px;color:#000;margin:12px 0 7px;border-right:4px solid #b45309;padding-right:7px}
+table{width:100%;border-collapse:collapse;margin-bottom:10px}
+thead th{background:#0f2744!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;color:#fff!important;padding:7px 5px;text-align:right;font-size:10px;border:1px solid #0f2744}
+tbody td{padding:6px 5px;border:1px solid #334155;font-size:11px;color:#000!important}
+tbody tr:nth-child(even){background:#e8ecf0!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+tfoot td{padding:6px 5px;font-weight:700;background:#cbd5e1!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;border:1px solid #334155;font-size:11px}
+.tb{background:#0f2744!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;color:#fff!important;border-radius:10px;padding:12px;margin-top:12px;border:2px solid #000}
+.tr{display:flex;justify-content:space-between;padding:3px 0;font-size:11px;opacity:.85}
+.tf{display:flex;justify-content:space-between;font-size:16px;font-weight:900;color:#f59e0b;border-top:1px solid rgba(255,255,255,.2);margin-top:7px;padding-top:7px}
+.notes{border:1px solid #dde3ec;border-radius:7px;padding:9px;margin-top:10px;font-size:11px;color:#6b7a96;line-height:1.7;white-space:pre-line}
+.foot{text-align:center;margin-top:16px;color:#6b7a96;font-size:10px;border-top:1px solid #dde3ec;padding-top:9px}
+@media print{body{padding:8px}*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}}</style></head><body>
+<div class="top"><div><div class="logo">🚪 کرکره فولادی</div><div style="color:#6b7a96;font-size:10px">صورتحساب رسمی</div></div>
+<div style="text-align:left"><div style="font-size:16px;font-weight:900;color:#0f2744">فاکتور #${inv.num}</div><div style="color:#6b7a96;font-size:10px">📅 ${inv.date}</div></div></div>
+<div class="cb"><div><div style="font-size:10px;color:#6b7a96">مشتری</div><div style="font-size:14px;font-weight:700">${inv.cust?.nm}</div></div>
+<div><div style="font-size:10px;color:#6b7a96">موبایل</div><div style="font-weight:600;margin-top:3px">📱 ${inv.cust?.ph}</div></div></div>
+<div class="sec">🚪 سازه</div>
+<table><thead><tr><th>#</th><th>محصول</th><th>رنگ</th><th>نصب</th><th>ابعاد</th><th>متراژ</th><th>مبلغ(ت)</th></tr></thead>
+<tbody>${dR}</tbody>
+<tfoot><tr><td colspan="5" style="text-align:right">جمع سازه</td><td>${(inv.doors||[]).reduce((s,d)=>s+(d.area||0),0).toFixed(2)}م²</td><td>${inv.c.dt.toLocaleString("fa-IR")}</td></tr></tfoot></table>
+${aR?`<div class="sec">🔧 متعلقات</div><table><thead><tr><th>#</th><th>نوع</th><th>مقدار</th><th>مبلغ(ت)</th></tr></thead><tbody>${aR}</tbody><tfoot><tr><td colspan="3" style="text-align:right">جمع</td><td>${inv.c.at.toLocaleString("fa-IR")}</td></tr></tfoot></table>`:''}
+${inv.notes?`<div class="notes">📝 ${inv.notes}</div>`:''}
+<div class="tb">
+<div class="tr"><span>جمع سازه</span><span>${inv.c.dt.toLocaleString("fa-IR")} ت</span></div>
+${inv.c.at?`<div class="tr"><span>جمع متعلقات</span><span>${inv.c.at.toLocaleString("fa-IR")} ت</span></div>`:''}
+<div class="tr"><span>جمع کل</span><span>${inv.c.tot.toLocaleString("fa-IR")} ت</span></div>
+<div class="tr"><span>پرداخت شده</span><span>${paid.toLocaleString("fa-IR")} ت</span></div>
+<div class="tf"><span>مانده بدهی</span><span>${rem.toLocaleString("fa-IR")} ت</span></div></div>
+${pR?`<div class="sec" style="margin-top:14px">💰 سوابق پرداخت</div><table><thead><tr><th>تاریخ</th><th>توضیح</th><th>مبلغ</th></tr></thead><tbody>${pR}</tbody></table>`:''}
+<div class="foot">سیستم هوشمند کرکره فولادی — ${inv.date}</div>
+<script>window.onload=()=>window.print();<\/script></body></html>`;
+  const w=window.open("","_blank");w.document.write(html);w.document.close();
+}
+
+/* ════ PRODUCTION QUEUE ════ */
+function addToProd(invId){
+  if(PROD.find(p=>p.invId===invId)){alert("این فاکتور قبلاً در صف تولید است.");return;}
+  const inv=INV.find(i=>i.id===invId);if(!inv)return;
+  PROD.push({id:uid(),invId,invNum:inv.num,custNm:inv.cust?.nm||"",date:nowFa(),doors:JSON.parse(JSON.stringify(inv.doors||[])),doneRows:{}});
+  sv();alert("✅ فاکتور #"+inv.num+" به لیست تولید اضافه شد.");go("detail",invId);
+}
+function removeFromProd(invId){
+  if(!confirm("از لیست تولید حذف شود؟"))return;
+  PROD=PROD.filter(p=>p.invId!==invId);sv();go("detail",invId);
+}
+
+/* ════ PRODUCTION PAGE ════ */
+function pgProd(){
+  if(!PROD.length)return`<div class="empty"><div class="ei">🏭</div>
+    <div style="margin-bottom:10px">لیست تولید خالی است</div>
+    <div style="font-size:12px;color:var(--dim);line-height:1.8">وارد جزئیات فاکتور شوید<br>و <b>🏭 ارسال به لیست تولید</b> را بزنید.</div>
+  </div>`;
+
+  const rows=[];
+  PROD.forEach(p=>{
+    (p.doors||[]).forEach((d,i)=>{
+      const w=parseFloat(d.w||0),h=parseFloat(d.h||0);
+      const wCut=Math.round(w*100)-5;
+      const tiles=d.tiles||Math.round(h*100/7.5);
+      const rc=parseInt(d.rc)||0,pc=parseInt(d.pc)||0;
+      const plain=Math.max(0,tiles-rc-pc-1);
+      const railLen=d.railLen!=null?d.railLen:Math.max(0,(h*100-30)/100);
+      const pkg=pkgCalc(tiles,w);
+      const isDone=p.doneRows?.[i]||false;
+      rows.push({pid:p.id,invNum:p.invNum,custNm:p.custNm,doorIdx:i,isDone,
+        d,wCut,tiles,rc,pc,plain,
+        totalStr:plain+"+"+rc+"+"+pc+"+1",
+        railLen,pkg,
+        hook:d.rt==='in'?'قلاب کوچک':d.rt==='out'?'قلاب بزرگ':'—',
+        etName:d.et==='alum'?'آلومینیوم':'گالوانیزه',
+        oc:d.oc||'تولید'
+      });
+    });
+  });
+
+  const TH="padding:7px 4px;text-align:center;font-size:9px;font-weight:700;color:#fff;border-left:1px solid rgba(255,255,255,.15);white-space:nowrap";
+  const TD="padding:7px 4px;text-align:center;border-left:1px solid var(--line);font-size:11px";
+
+  const tblRows=rows.map((r,idx)=>`<tr data-pid="${r.pid}" data-di="${r.doorIdx}" style="opacity:${r.isDone?'0.4':'1'};${idx%2===1?'background:#f9fafb':''}">
+    <td style="${TD};padding:4px 8px">
+      <label style="cursor:pointer;display:flex;align-items:center;justify-content:center">
+        <input type="checkbox" ${r.isDone?'checked':''} style="display:none" onchange="toggleRow('${r.pid}',${r.doorIdx},this.checked)">
+        <span style="width:28px;height:28px;border-radius:8px;border:2px solid ${r.isDone?'#059669':'#cbd5e1'};background:${r.isDone?'#059669':'#fff'};display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:900;color:#fff">${r.isDone?'✓':''}</span>
+      </label>
+    </td>
+    <td style="${TD};font-weight:800;color:var(--blue)">#${r.invNum}</td>
+    <td style="${TD}">${r.d.pname||'-'}</td>
+    <td style="${TD}">${r.d.colName||'-'}</td>
+    <td style="${TD};font-weight:900;font-size:14px;color:var(--blue)">${r.wCut}</td>
+    <td style="${TD};font-weight:700;color:#7c3aed">${r.totalStr}</td>
+    <td style="${TD}">${r.rc>0?(r.rc+'<br><span style="font-size:9px;color:#7c3aed;font-weight:700">'+(r.d.scolName||'')+'</span>'):'—'}</td>
+    <td style="${TD}">${r.pc>0?r.pc:'—'}</td>
+    <td style="${TD}">${r.d.ecolName||r.d.colName||'-'}</td>
+    <td style="${TD}">${r.etName}</td>
+    <td style="${TD};font-weight:700">${r.railLen.toFixed(2)}</td>
+    <td style="${TD}">${r.d.rcolName||r.d.colName||'-'}</td>
+    <td style="${TD}">${r.oc}</td>
+    <td style="${TD}">${r.hook}</td>
+    <td style="${TD};font-weight:800;color:var(--go)">${r.pkg.count}</td>
+    <td style="${TD};font-size:9px;color:#7c3aed">${r.pkg.str}</td>
+    <td style="${TD}"><input type="text" value="${(r.d.nt||'').replace(/"/g,'&quot;')}" placeholder="توضیحات..." style="width:85px;padding:3px 5px;font-size:10px;border-radius:5px;border:1px solid var(--line);direction:rtl;font-family:inherit;background:#f9fafb" onchange="updateProdNote('${r.pid}',${r.doorIdx},this.value)"></td>
+  </tr>`).join("");
+
+  const pending=rows.filter(r=>!r.isDone).length;
+  const done=rows.filter(r=>r.isDone).length;
+
+  return`
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+    <div style="font-size:13px;font-weight:800;color:var(--blue)">🏭 لیست تولید</div>
+    <div style="display:flex;gap:7px;align-items:center">
+      <span style="font-size:11px;color:var(--dim)" id="prodCounter">${pending} در انتظار | ${done} تکمیل</span>
+      <button class="btn bp" style="padding:7px 12px;font-size:11px" onclick="printProd()">🖨️ چاپ</button>
+    </div>
+  </div>
+  <div style="font-size:11px;color:var(--dim);background:#fffbeb;border-radius:9px;padding:9px;margin-bottom:12px;line-height:1.7">
+    ✅ ردیف‌هایی که تیک بزنید تکمیل‌شده محسوب می‌شوند و از چاپ حذف می‌گردند.
+  </div>
+  <div style="overflow-x:auto;border-radius:12px;border:1px solid var(--line);margin-bottom:12px">
+    <table class="prod-tbl" id="prodTbl">
+      <thead><tr style="background:#0f2744">
+        <th style="${TH}">✓</th>
+        <th style="${TH}">فاکتور</th>
+        <th style="${TH}">نوع تیغه</th>
+        <th style="${TH}">رنگ</th>
+        <th style="${TH}">عرض برش<br>(سانت)</th>
+        <th style="${TH}">ساده+رنگ+پانچ+۱</th>
+        <th style="${TH}">تعداد رنگ خاص<br>/ نام رنگ</th>
+        <th style="${TH}">پانچ</th>
+        <th style="${TH}">رنگ انتهایی</th>
+        <th style="${TH}">نوع انتهایی</th>
+        <th style="${TH}">طول ریل(م)</th>
+        <th style="${TH}">رنگ ریل</th>
+        <th style="${TH}">کد سفارش</th>
+        <th style="${TH}">قلاب</th>
+        <th style="${TH}">بسته</th>
+        <th style="${TH}">تیغه/بسته</th>
+        <th style="${TH}">توضیحات</th>
+      </tr></thead>
+      <tbody>${tblRows}</tbody>
+    </table>
+  </div>`;
+}
+
+function toggleRow(pid,doorIdx,checked){
+  PROD=PROD.map(p=>{
+    if(p.id!==pid)return p;
+    const dr={...(p.doneRows||{})};
+    dr[doorIdx]=checked;
+    return{...p,doneRows:dr};
+  });
+  sv();
+  // update row without re-render
+  document.querySelectorAll('#prodTbl tbody tr').forEach(tr=>{
+    if(tr.dataset.pid===pid&&parseInt(tr.dataset.di)===doorIdx){
+      tr.style.opacity=checked?'0.4':'1';
+      const span=tr.querySelector('span[style*="border-radius:8px"]');
+      if(span){
+        span.style.borderColor=checked?'#059669':'#cbd5e1';
+        span.style.background=checked?'#059669':'#fff';
+        span.textContent=checked?'✓':'';
+      }
+    }
+  });
+  // update counter
+  const allChk=document.querySelectorAll('#prodTbl input[type=checkbox]');
+  const doneCount=Array.from(allChk).filter(c=>c.checked).length;
+  const pendCount=allChk.length-doneCount;
+  const counter=document.getElementById('prodCounter');
+  if(counter)counter.textContent=pendCount+' در انتظار | '+doneCount+' تکمیل';
+}
+
+function updateProdNote(pid,doorIdx,val){
+  PROD=PROD.map(p=>{
+    if(p.id!==pid)return p;
+    const doors=[...p.doors];
+    if(doors[doorIdx])doors[doorIdx]={...doors[doorIdx],nt:val};
+    return{...p,doors};
+  });
+  sv();
+}
+
+/* ════ PRINT PRODUCTION ════ */
+function printProd(){
+  const rows=[];
+  PROD.forEach(p=>{
+    (p.doors||[]).forEach((d,i)=>{
+      if(p.doneRows?.[i])return;
+      const w=parseFloat(d.w||0),h=parseFloat(d.h||0);
+      const wCut=Math.round(w*100)-5;
+      const tiles=d.tiles||Math.round(h*100/7.5);
+      const rc=parseInt(d.rc)||0,pc=parseInt(d.pc)||0;
+      const plain=Math.max(0,tiles-rc-pc-1);
+      const railLen=d.railLen!=null?d.railLen:Math.max(0,(h*100-30)/100);
+      const pkg=pkgCalc(tiles,w);
+      rows.push({p,d,i,wCut,tiles,rc,pc,plain,
+        totalStr:plain+"+"+rc+"+"+pc+"+1",railLen,pkg,
+        hook:d.rt==='in'?'قلاب کوچک':d.rt==='out'?'قلاب بزرگ':'—',
+        etName:d.et==='alum'?'آلومینیوم':'گالوانیزه',
+        oc:d.oc||'تولید'});
+    });
+  });
+  if(!rows.length){alert("همه موارد تکمیل شده‌اند!");return;}
+  const html=`<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"><title>برگه تولید</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Vazirmatn',Tahoma;direction:rtl;padding:10px;font-size:10px;color:#000;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.top{display:flex;justify-content:space-between;border-bottom:4px solid #000;padding-bottom:8px;margin-bottom:10px}
+.logo{font-size:16px;font-weight:900;color:#000}
+table{width:100%;border-collapse:collapse}
+thead th{background:#0f2744!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;color:#fff!important;padding:5px 3px;text-align:center;font-size:8px;font-weight:700;border:1.5px solid #000;white-space:nowrap}
+tbody td{padding:5px 3px;text-align:center;border:1.5px solid #000;font-size:9px;color:#000!important}
+tbody tr:nth-child(even){background:#dddddd!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.foot{text-align:center;margin-top:10px;color:#6b7a96;font-size:8px;border-top:1px solid #dde3ec;padding-top:8px}
+@media print{body{padding:4px}*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}}</style></head><body>
+<div class="top"><div><div class="logo">🏭 برگه تولید — کرکره فولادی</div></div>
+<div style="font-size:9px;color:#6b7a96;text-align:left">تاریخ: ${nowFa()} | ردیف: ${rows.length}</div></div>
+<table><thead><tr>
+<th>ردیف</th><th>فاکتور</th><th>نوع تیغه</th><th>رنگ</th>
+<th>عرض برش<br>(سانت)</th><th>ساده+رنگ+پانچ+۱</th>
+<th>رنگ خاص<br>(تعداد/رنگ)</th><th>پانچ</th>
+<th>رنگ انتهایی</th><th>نوع انتهایی</th>
+<th>طول ریل(م)</th><th>رنگ ریل</th><th>کد سفارش</th>
+<th>قلاب</th><th>بسته</th><th>تیغه در بسته</th><th>توضیحات</th>
+</tr></thead><tbody>
+${rows.map(({p,d,i,wCut,rc,pc,totalStr,railLen,pkg,hook,etName,oc},ri)=>`<tr>
+<td>${ri+1}</td>
+<td style="font-weight:800;color:#1e3a5f">#${p.invNum}</td>
+<td>${d.pname||'-'}</td><td>${d.colName||'-'}</td>
+<td style="font-weight:900;font-size:12px;color:#1e3a5f">${wCut}</td>
+<td style="font-weight:700;color:#7c3aed">${totalStr}</td>
+<td>${rc>0?(rc+(d.scolName?'/'+d.scolName:'')):'—'}</td>
+<td>${pc>0?pc:'—'}</td>
+<td>${d.ecolName||d.colName||'-'}</td><td>${etName}</td>
+<td style="font-weight:700">${railLen.toFixed(2)}</td>
+<td>${d.rcolName||d.colName||'-'}</td>
+<td>${oc}</td><td>${hook}</td>
+<td style="font-weight:800;color:#059669">${pkg.count}</td>
+<td style="font-size:8px;color:#7c3aed">${pkg.str}</td>
+<td style="font-size:8px;color:#6b7a96">${d.nt||''}</td>
+</tr>`).join("")}
+</tbody></table>
+<div class="foot">برگه تولید — سیستم هوشمند کرکره فولادی — ${nowFa()}</div>
+<script>window.onload=()=>window.print();<\/script></body></html>`;
+  const w=window.open("","_blank");w.document.write(html);w.document.close();
+}
+
+/* ════ SETTINGS ════ */
+function pgCfg(){
+  return`<div class="cfg-card">
+    <div class="cfg-nav">
+      <button class="ctab${CTAB2==='products'?' on':''}" data-tab="products" onclick="sCfg('products')">📦<br>محصولات</button>
+      <button class="ctab${CTAB2==='accTypes'?' on':''}" data-tab="accTypes" onclick="sCfg('accTypes')">🔧<br>متعلقات</button>
+      <button class="ctab${CTAB2==='colors'?' on':''}"   data-tab="colors"   onclick="sCfg('colors')">🎨<br>رنگ‌ها</button>
+      <button class="ctab${CTAB2==='fixed'?' on':''}"    data-tab="fixed"    onclick="sCfg('fixed')">📌<br>توضیحات</button>
+      <button class="ctab${CTAB2==='phone'?' on':''}"    data-tab="phone"    onclick="sCfg('phone')">📞<br>شماره من</button>
+    </div>
+    <div class="cfg-body" id="cfgBody">${cfgBody()}</div>
+  </div>
+  <div class="card" style="margin-top:0">
+    <div class="st">🖨️ چاپ صورتحساب</div>
+    <div class="f"><label class="lbl">انتخاب فاکتور</label>
+      <select id="printSel"><option value="">-- انتخاب کنید --</option>
+        ${[...INV].reverse().map(i=>`<option value="${i.id}">فاکتور #${i.num} — ${i.cust?.nm} — ${i.date}</option>`).join("")}
+      </select>
+    </div>
+    <button class="btn bg bfull bbig" onclick="doPrintSel()" style="margin-top:6px">🖨️ چاپ / PDF</button>
+  </div>`;
+}
+function sCfg(t){CTAB2=t;const b=document.getElementById("cfgBody");if(b)b.innerHTML=cfgBody();document.querySelectorAll(".ctab").forEach(el=>el.classList.toggle("on",el.dataset.tab===t));}
+function cfgBody(){
+  if(CTAB2==="products")return cfgProducts();
+  if(CTAB2==="accTypes")return cfgAccTypes();
+  if(CTAB2==="colors")  return cfgColors();
+  if(CTAB2==="fixed")   return cfgFixed();
+  if(CTAB2==="phone")   return cfgPhone();
+  return "";
+}
+function cfgProducts(){
+  return P.products.map(it=>`<div class="card" style="padding:12px;margin-bottom:8px"><div style="display:flex;justify-content:space-between;align-items:center"><div><div style="font-weight:700;font-size:13px">${it.name}</div><div style="color:var(--go);font-size:12px;margin-top:2px">${fp(it.ppm)} / م²</div></div><div style="display:flex;gap:5px"><button class="btn bl" style="padding:6px 10px" onclick="edProd2('${it.id}')">✏️</button><button class="btn br" style="padding:6px 10px" onclick="delProd2('${it.id}')">🗑️</button></div></div></div>`).join("")+
+  `<div class="addbox"><div class="abt">➕ محصول جدید</div><div class="f"><label class="lbl">نام</label><input id="nPn" placeholder="نام محصول..."></div><div class="f"><label class="lbl">قیمت م² (تومان)</label><input type="number" inputmode="numeric" id="nPp" placeholder="۱۰۰۰۰۰۰"></div><button class="btn bp bfull" onclick="addProd2()" style="margin-top:4px">➕ افزودن</button></div>`;
+}
+function cfgAccTypes(){
+  return`<div style="font-size:11px;color:var(--dim);background:#f0f9ff;border-radius:9px;padding:9px;margin-bottom:10px;line-height:1.7">💡 متعلقات تعریف‌شده در فرم فاکتور قابل انتخاب هستند.</div>`+
+  P.accTypes.map(a=>`<div class="card" style="padding:12px;margin-bottom:8px"><div style="display:flex;justify-content:space-between;align-items:center"><div><div style="font-weight:700;font-size:13px">${a.name} <span style="color:var(--dim);font-weight:400;font-size:11px">(${a.unit})</span></div><div style="color:var(--go);font-size:12px;margin-top:2px">${fp(a.ppu)} / ${a.unit}</div></div><div style="display:flex;gap:5px"><button class="btn bl" style="padding:6px 10px" onclick="edAcc2('${a.id}')">✏️</button><button class="btn br" style="padding:6px 10px" onclick="delAcc2('${a.id}')">🗑️</button></div></div></div>`).join("")+
+  `<div class="addbox"><div class="abt">➕ متعلقات جدید</div><div class="f"><label class="lbl">نام</label><input id="nAn" placeholder="موتور برقی، قفل..."></div><div class="r2"><div class="f"><label class="lbl">واحد</label><input id="nAu" placeholder="متر/عدد/کیلو"></div><div class="f"><label class="lbl">قیمت واحد (تومان)</label><input type="number" inputmode="numeric" id="nAp" placeholder="۱۰۰۰۰۰"></div></div><button class="btn bp bfull" onclick="addAcc2()" style="margin-top:4px">➕ افزودن</button></div>`;
+}
+function cfgColors(){
+  return`<div style="font-size:11px;color:var(--dim);background:#f0f9ff;border-radius:9px;padding:9px;margin-bottom:10px;line-height:1.7">🎨 رنگ‌های تعریف‌شده در فرم فاکتور قابل انتخاب هستند.</div>`+
+  P.colors.map(c=>`<div class="card" style="padding:11px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center"><div style="display:flex;align-items:center;gap:9px"><div style="width:22px;height:22px;border-radius:6px;border:1px solid var(--line);background:${cHex(c.name)}"></div><span style="font-weight:600">🎨 ${c.name}</span></div><div style="display:flex;gap:5px"><button class="btn bl" style="padding:6px 10px" onclick="edCol2('${c.id}')">✏️</button><button class="btn br" style="padding:6px 10px" onclick="delCol2('${c.id}')">🗑️</button></div></div>`).join("")+
+  `<div class="addbox"><div class="abt">➕ رنگ جدید</div><div class="f"><label class="lbl">نام رنگ</label><input id="nCol" placeholder="نقره‌ای، لاکی..."></div><button class="btn bp bfull" onclick="addCol2()">➕ افزودن</button></div>`;
+}
+function cfgFixed(){
+  return`<div style="font-size:11px;color:var(--dim);background:#fffbeb;border-radius:9px;padding:9px;margin-bottom:10px;line-height:1.7">📌 این توضیحات در پایین هر فاکتور درج می‌شود.</div>`+
+  P.fixedNotes.map((n,i)=>`<div class="card" style="padding:11px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="font-size:12px;flex:1">${n}</span><div style="display:flex;gap:5px;flex-shrink:0"><button class="btn bl" style="padding:6px 10px" onclick="edFixed(${i})">✏️</button><button class="btn br" style="padding:6px 10px" onclick="delFixed(${i})">🗑️</button></div></div>`).join("")+
+  `<div class="addbox"><div class="abt">➕ توضیح جدید</div><textarea id="nFixed" placeholder="متن توضیح..." style="height:60px"></textarea><button class="btn bp bfull" onclick="addFixed()" style="margin-top:6px">➕ افزودن</button></div>`;
+}
+function cHex(n){const m={"سفید":"#fff","کرم":"#f5f0e8","خاکستری":"#9ca3af","مشکی":"#1f2937","قهوه‌ای":"#92400e","آجری":"#b45309"};return m[n]||"#e5e7eb";}
+function doPrintSel(){const id=document.getElementById("printSel")?.value;if(!id){alert("یک فاکتور انتخاب کنید");return;}doPrint(id);}
+function edProd2(id){const r=P.products.find(x=>x.id===id);if(!r)return;const n=prompt("نام:",r.name);if(!n)return;const p=prompt("قیمت م²:",r.ppm);if(!p)return;P.products=P.products.map(x=>x.id===id?{...x,name:n,ppm:parseFloat(p)||x.ppm}:x);sv();sCfg(CTAB2);}
+function delProd2(id){if(!confirm("حذف شود؟"))return;P.products=P.products.filter(x=>x.id!==id);sv();sCfg(CTAB2);}
+function addProd2(){const n=document.getElementById("nPn")?.value,p=parseFloat(document.getElementById("nPp")?.value);if(!n||!p)return;P.products.push({id:"p"+uid(),name:n,ppm:p});sv();sCfg(CTAB2);}
+function edAcc2(id){const r=P.accTypes.find(x=>x.id===id);if(!r)return;const n=prompt("نام:",r.name);if(!n)return;const u=prompt("واحد:",r.unit);if(!u)return;const p=prompt("قیمت:",r.ppu);if(!p)return;P.accTypes=P.accTypes.map(x=>x.id===id?{...x,name:n,unit:u,ppu:parseFloat(p)||x.ppu}:x);sv();sCfg(CTAB2);}
+function delAcc2(id){if(!confirm("حذف شود؟"))return;P.accTypes=P.accTypes.filter(x=>x.id!==id);sv();sCfg(CTAB2);}
+function addAcc2(){const n=document.getElementById("nAn")?.value,u=document.getElementById("nAu")?.value,p=parseFloat(document.getElementById("nAp")?.value);if(!n||!u||!p)return;P.accTypes.push({id:"a"+uid(),name:n,unit:u,ppu:p});sv();sCfg(CTAB2);}
+function edCol2(id){const r=P.colors.find(x=>x.id===id);if(!r)return;const n=prompt("نام رنگ:",r.name);if(!n)return;P.colors=P.colors.map(x=>x.id===id?{...x,name:n}:x);sv();sCfg(CTAB2);}
+function addCol2(){const n=document.getElementById("nCol")?.value;if(!n)return;P.colors.push({id:"c"+uid(),name:n});sv();sCfg(CTAB2);}
+function delCol2(id){if(!confirm("حذف شود؟"))return;P.colors=P.colors.filter(c=>c.id!==id);sv();sCfg(CTAB2);}
+function edFixed(i){const n=prompt("ویرایش:",P.fixedNotes[i]);if(n===null)return;P.fixedNotes[i]=n;sv();sCfg(CTAB2);}
+function delFixed(i){if(!confirm("حذف شود؟"))return;P.fixedNotes.splice(i,1);sv();sCfg(CTAB2);}
+function addFixed(){const n=document.getElementById("nFixed")?.value?.trim();if(!n)return;P.fixedNotes.push(n);sv();sCfg(CTAB2);}
+
+function cfgPhone(){
+  return `
+  <div style="font-size:12px;color:var(--dim);background:#f0f9ff;border-radius:9px;padding:10px;margin-bottom:12px;line-height:1.8">
+    📞 شماره واتساپ شما برای دریافت تأییدیه از مشتری.<br>
+    وقتی مشتری روی لینک تأیید کلیک کند، پیام تأیید به این شماره ارسال می‌شود.
+  </div>
+  <div class="f"><label class="lbl">شماره موبایل شما (با صفر)</label>
+    <input id="myPhoneInput" type="tel" inputmode="numeric" value="${P.myPhone||''}" placeholder="۰۹۱۲۰۰۰۰۰۰۰">
+  </div>
+  <button class="btn bg bfull bbig" onclick="saveMyPhone()" style="margin-top:4px">💾 ذخیره</button>
+  ${P.myPhone?`<div style="background:#f0fdf4;border-radius:9px;padding:10px;margin-top:10px;font-size:12px;color:var(--go)">✅ شماره فعال: <b>${P.myPhone}</b></div>`:''}`;
+}
+
+function saveMyPhone(){
+  const ph=document.getElementById("myPhoneInput")?.value?.trim();
+  if(!ph){alert("شماره را وارد کنید");return;}
+  P.myPhone=ph; sv();
+  sCfg("phone");
+  alert("✅ شماره ذخیره شد");
+}
+
+
+/* ════ EDIT INVOICE ════ */
+function editInv(id){
+  const inv=INV.find(i=>i.id===id); if(!inv) return;
+  // load invoice data into new form
+  PAGE="new"; SEL=null;
+  localStorage.setItem("kk9_page","new");
+  localStorage.removeItem("kk9_sel");
+
+  // rebuild DOORS from invoice
+  DOORS=inv.doors.map(d=>({
+    id:uid(),
+    pid:d.pid||"", cid:d.cid||"", rt:d.rt||"",
+    w:d.w||"", h:d.h||"",
+    rc:d.rc||0, pc:d.pc||0, nt:d.nt||"",
+    rcol:d.rcol||"", et:d.et||"galv", ecol:d.ecol||"",
+    oc:d.oc||"تولید", scol:d.scol||"",
+    tiles:d.tiles||0, railLen:d.railLen||0
+  }));
+
+  // rebuild ACCS
+  ACCS=inv.accs?.length?inv.accs.map(a=>({
+    id:uid(), aid:a.aid||"", qty:a.qty||""
+  })):[na()];
+
+  document.querySelectorAll(".nb").forEach(b=>b.classList.toggle("active",b.dataset.page==="new"));
+  render();
+
+  // after render, fill customer + date + notes
+  setTimeout(()=>{
+    const cn=document.getElementById("f_cn"); if(cn) cn.value=inv.cust?.nm||"";
+    const cp=document.getElementById("f_cp"); if(cp) cp.value=inv.cust?.ph||"";
+    const dt=document.getElementById("f_date"); if(dt) dt.value=inv.date||nowFa();
+    const nt=document.getElementById("f_notes"); if(nt) nt.value=(inv.notes||"").replace(/\n\n📌 شرایط فروش:[\s\S]*/,"").trim();
+    updSum();
+    // show edit banner
+    const wrap=document.getElementById("app");
+    const banner=document.createElement("div");
+    banner.style.cssText="background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:11px 14px;margin-bottom:12px;font-size:12px;color:#92400e;display:flex;justify-content:space-between;align-items:center";
+    banner.innerHTML=`<span>✏️ ویرایش فاکتور <b>#${inv.num}</b> — پس از تغییر ثبت کنید</span>
+      <button onclick="confirmEdit('${id}')" style="background:#059669;color:#fff;border:none;border-radius:8px;padding:6px 12px;cursor:pointer;font-family:inherit;font-size:11px;font-weight:700">💾 ذخیره ویرایش</button>`;
+    wrap.insertBefore(banner, wrap.firstChild);
+    // store edit target
+    window._editingInvId = id;
+  }, 100);
+}
+
+function confirmEdit(id){
+  const cn=(document.getElementById("f_cn")?.value||"").trim();
+  const cp=(document.getElementById("f_cp")?.value||"").trim();
+  if(!cn||!cp){alert("نام و موبایل اجباری است");return;}
+
+  const inv=INV.find(i=>i.id===id); if(!inv) return;
+
+  // collect updated doors
+  const doors=DOORS.map(d=>{
+    const pid=document.getElementById("dp_"+d.id)?.value||d.pid;
+    const cid=document.getElementById("dc_"+d.id)?.value||d.cid;
+    const w=document.getElementById("dw_"+d.id)?.value||d.w;
+    const h=document.getElementById("dh_"+d.id)?.value||d.h;
+    const rc=parseInt(document.getElementById("drc_"+d.id)?.value||d.rc||0);
+    const pc=parseInt(document.getElementById("dpc_"+d.id)?.value||d.pc||0);
+    const nt=document.getElementById("dnt_"+d.id)?.value||d.nt||"";
+    const rcol=document.getElementById("drc2_"+d.id)?.value||d.rcol||cid;
+    const et=document.getElementById("det_"+d.id)?.value||d.et||"galv";
+    const ecol=document.getElementById("dec_"+d.id)?.value||d.ecol||cid;
+    const oc=document.getElementById("doc_"+d.id)?.value||d.oc||"تولید";
+    const scol=document.getElementById("dsc_"+d.id)?.value||d.scol||"";
+    const pr=P.products.find(p=>p.id===pid);
+    const col=P.colors.find(co=>co.id===cid);
+    const a=(parseFloat(w)||0)*(parseFloat(h)||0);
+    const tiles=Math.round((parseFloat(h)||0)*100/7.5);
+    const railLen=Math.max(0,((parseFloat(h)||0)*100-30)/100);
+    return{pid,cid,rt:d.rt,w,h,
+      pname:pr?.name||"",colName:col?.name||"",
+      rcolName:P.colors.find(co=>co.id===rcol)?.name||"",
+      ecolName:P.colors.find(co=>co.id===ecol)?.name||"",
+      scolName:P.colors.find(co=>co.id===scol)?.name||"",
+      area:a,price:a*(pr?.ppm||0),
+      rc,pc,nt,rcol,et,ecol,oc,scol,tiles,railLen};
+  });
+
+  const accs=ACCS.map(a=>{
+    const aid=document.getElementById("aa_"+a.id)?.value||a.aid;
+    const qty=document.getElementById("aq_"+a.id)?.value||a.qty;
+    const tp=P.accTypes.find(t=>t.id===aid);
+    return{aid,qty,aname:tp?.name||"",unit:tp?.unit||"",price:(parseFloat(qty)||0)*(tp?.ppu||0)};
+  }).filter(a=>a.aid&&parseFloat(a.qty)>0);
+
+  const cl=calcTotals(doors,accs);
+  const notes=(document.getElementById("f_notes")?.value||"").trim();
+  const fixedPart=P.fixedNotes.length?"
+
+📌 شرایط فروش:
+"+P.fixedNotes.map(n=>"• "+n).join("
+"):"";
+
+  INV=INV.map(i=>i.id!==id?i:{...i,
+    cust:{nm:cn,ph:cp},
+    date:document.getElementById("f_date")?.value||i.date,
+    doors, accs, notes:(notes+fixedPart).trim(), c:cl
+  });
+  sv();
+  window._editingInvId=null;
+  DOORS=[nd()]; ACCS=[na()];
+  alert("✅ فاکتور ویرایش شد");
+  go("detail",id);
+}
+
+function editCust(id){
+  const inv=INV.find(i=>i.id===id); if(!inv) return;
+  const nm=prompt("نام مشتری:",inv.cust?.nm||"");
+  if(nm===null) return;
+  const ph=prompt("موبایل:",inv.cust?.ph||"");
+  if(ph===null) return;
+  INV=INV.map(i=>i.id!==id?i:{...i,cust:{nm,ph}});
+  sv();
+  go("detail",id);
+}
+
+
+/* ════ EDIT INVOICE ════ */
+
+
+function pgEditPage(){
+  const inv=INV.find(i=>i.id===SEL);
+  if(!inv){go('list');return '';}
+  // get pgNew HTML and patch submit button
+  let html=pgNew();
+  html=html.replace(
+    'onclick="subInv()">✅ ثبت فاکتور</button>',
+    'onclick="subEdit()">💾 ذخیره ویرایش</button>'
+  );
+  return '<div style="background:#fffbeb;border-radius:10px;padding:10px;margin-bottom:10px;font-size:12px;color:#92400e;font-weight:700">✏️ ویرایش فاکتور #'+inv.num+'</div>'+html;
+}
+
+function subEdit(){
+  const inv=INV.find(i=>i.id===SEL); if(!inv) return;
+  const cn=(elv("f_cn")||"").trim(),cp=(elv("f_cp")||"").trim();
+  if(!cn||!cp){alert("لطفاً نام و موبایل مشتری را وارد کنید");return;}
+  const doors=DOORS.map(d=>{
+    const pid=elv("dp_"+d.id)||d.pid,cid=elv("dc_"+d.id)||d.cid;
+    const w=elv("dw_"+d.id)||d.w,h=elv("dh_"+d.id)||d.h;
+    const pr=P.products.find(p=>p.id===pid),col=P.colors.find(c=>c.id===cid);
+    const a=(parseFloat(w)||0)*(parseFloat(h)||0);
+    const rc=parseInt(elv("drc_"+d.id)||d.rc||0);
+    const pc=parseInt(elv("dpc_"+d.id)||d.pc||0);
+    const nt=elv("dnt_"+d.id)||d.nt||"";
+    const rcol=elv("drc2_"+d.id)||d.rcol||cid;
+    const et=elv("det_"+d.id)||d.et||"galv";
+    const ecol=elv("dec_"+d.id)||d.ecol||cid;
+    const oc=elv("doc_"+d.id)||d.oc||"تولید";
+    const scol=elv("dsc_"+d.id)||d.scol||"";
+    const tiles=Math.round((parseFloat(h)||0)*100/7.5);
+    const railLen=Math.max(0,((parseFloat(h)||0)*100-30)/100);
+    return{pid,cid,rt:d.rt,w,h,
+      pname:pr?.name||"",colName:col?.name||"",
+      rcolName:P.colors.find(c=>c.id===rcol)?.name||"",
+      ecolName:P.colors.find(c=>c.id===ecol)?.name||"",
+      scolName:P.colors.find(c=>c.id===scol)?.name||"",
+      area:a,price:a*(pr?.ppm||0),
+      rc,pc,nt,scol,rcol,et,ecol,oc,tiles,railLen};
+  });
+  const accs=ACCS.map(a=>{
+    const aid=elv("aa_"+a.id)||a.aid,qty=elv("aq_"+a.id)||a.qty;
+    const tp=P.accTypes.find(t=>t.id===aid);
+    return{aid,qty,aname:tp?.name||"",unit:tp?.unit||"",price:(parseFloat(qty)||0)*(tp?.ppu||0)};
+  }).filter(a=>a.aid&&parseFloat(a.qty)>0);
+  const cl=calcTotals(doors,accs);
+  const notes=elv("f_notes")||inv.notes||"";
+  const date=elv("f_date")||inv.date;
+  INV=INV.map(i=>i.id!==SEL?i:{...i,cust:{nm:cn,ph:cp},doors,accs,notes,date,c:cl});
+  sv();
+  go("detail",SEL);
+  alert("✅ فاکتور ویرایش شد");
+}
+
+
+// verify detail page invoice still exists after load
+if(PAGE==="detail"&&SEL){
+  if(!INV.find(i=>i.id===SEL)){
+    PAGE="list"; SEL=null;
+  }
+}
+render();
+</script>
+</body>
+</html>
